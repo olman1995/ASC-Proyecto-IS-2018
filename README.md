@@ -1,38 +1,33 @@
-Heading
+Proyecto semestral Aseguramiento de Calidad
 =======
 
-## Sub-heading
+## Descripcion
  
-Paragraphs are separated
-by a blank line.
-
-Two spaces at the end of a line  
-leave a line break.
-
-Text attributes _italic_, 
-**bold**, `monospace`.
-
-Horizontal rule:
+Se elaborara un proyecto de software en el cual se implementara un sitio web en el cual se estime la edad apartir de imagenes radiologicas de la mano.
 
 ---
 
-Bullet list:
+Miembro:
 
-  * apples
-  * oranges
-  * pears
+  * Olman Castillo Picado
+  
+---
 
-Numbered list:
+Para la ejecucion del proyecto se requiere.
 
-  1. wash
-  2. rinse
-  3. repeat
+Requisitos:
 
-A [link](http://example.com).
+  1. Python 3.4.4, [enlace de descarga](https://www.python.org/downloads/release/python-344/)
+  2. Django 1.11.4, [enlace de descarga](https://www.djangoproject.com/)
+  3. OpenCV 3.1.0, [enlace de descarga](https://pypi.python.org/pypi/opencv-python/3.1.0)
+  4. Numpy 3.1.0, [enlace de descarga](https://pypi.python.org/pypi/numpy/1.13.0)
+  
+El ambiente en el que sera desarrollado el proyecto sera:
 
-![Image](Image_icon.png)
+  1. Windows 10
+  2. Eclipse IDE for Java EE Developers, [enlace de descarga](http://www.eclipse.org/downloads/packages/release/Oxygen/2)
 
-> Markdown uses email-style > characters for blockquoting.
+---
 
-Inline <abbr title="Hypertext Markup Language">HTML</abbr> is supported.
+
 
