@@ -13,19 +13,39 @@ Miembro:
   
 ---
 
-Para la ejecucion del proyecto se requiere.
+Para el desarrollo del proyecto se requiere.
 
 Requisitos:
 
-  1. Python 3.4.4, [enlace de descarga](https://www.python.org/downloads/release/python-344/)
-  2. Django 1.11.4, [enlace de descarga](https://www.djangoproject.com/)
-  3. OpenCV 3.1.0, [enlace de descarga](https://pypi.python.org/pypi/opencv-python/3.1.0)
-  4. Numpy 3.1.0, [enlace de descarga](https://pypi.python.org/pypi/numpy/1.13.0)
+  1. Anaconda 5.1-Python 3.6 version, [Enlace de descarga](https://www.anaconda.com/download/#windows)
+  2. Python 3.6.3, [Enlace de la pagina](https://www.python.org/)
+  Anaconda ya incluye la version de Python 3.6.3
+  3. Instalar librerias keras,numpy,tensorflow
+  Dentro del command prompt de Anaconda se debe agregar los siguientes comandos.
+  conda install scipy
+  conda install --force html5lib
+  pip install sklearn
+  pip install pandas
+  pip install pandas-datareader
+  pip install matplotlib
+  pip install pillow
+  pip install requests
+  pip install h5py
+  pip install tensorflow==1.4.0
+  pip install keras==2.1.2
+  Para mas informacion consulte el tutorial de Jeff Heaton. [Enlace del video tutorial](https://www.youtube.com/watch?v=z0qhKP2liHs)
+  3. Django 2.0.2, [Enlace de la pagina](https://www.djangoproject.com/)
+  Dentro del command prompt de Anaconda se debe agregar el comando.
+  pip install django
+  4. OpenCV 3.3.1, [Enlace de la pagina](https://opencv.org/)
+  Dentro del command prompt de Anaconda se debe agregar el comando.
+  conda install -c menpo opencv
+
   
 El ambiente en el que sera desarrollado el proyecto sera:
 
   1. Windows 10
-  2. Eclipse IDE for Java EE Developers, [enlace de descarga](http://www.eclipse.org/downloads/packages/release/Oxygen/2)
+  2. Eclipse Oxygen IDE for Java EE Developers, [enlace de descarga](http://www.eclipse.org/downloads/packages/release/Oxygen/2)
 
 ---
 
