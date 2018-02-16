@@ -35,10 +35,10 @@ Requisitos:
   * pip install keras==2.1.2 <br>
   Para mas informacion consulte el tutorial de Jeff Heaton. [Enlace del video tutorial](https://www.youtube.com/watch?v=z0qhKP2liHs)
   3. Django 2.0.2, [Enlace de la pagina](https://www.djangoproject.com/)<br>
-  Dentro del command prompt de Anaconda se debe agregar el comando.
+  Dentro del command prompt de Anaconda se debe agregar el comando.<br>
   pip install django
   4. OpenCV 3.3.1, [Enlace de la pagina](https://opencv.org/)<br>
-  Dentro del command prompt de Anaconda se debe agregar el comando.
+  Dentro del command prompt de Anaconda se debe agregar el comando.<br>
   conda install -c menpo opencv
 
   
