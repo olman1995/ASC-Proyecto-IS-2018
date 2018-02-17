@@ -1,0 +1,52 @@
+{%load staticfiles%}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/script.js" ></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>S-AGE-Estimate</title>
+</head>
+
+<body>
+	
+	<div id="header" class="box_header"> 
+	<div id="title" class="box_title"><h1>Hola mundo</h1></div>
+	<div id="nav" class="box_nav_1"></div>
+	 </div>
+	<div id="body" class="box_body"></div>
+	<div id="footer" class="box_footer"></div>
+    <script>
+    var last_known_scroll_position = 0;
+    var ticking = false;
+    function doSomething(scroll_pos) {
+        if(scroll_pos>500){
+            var nav = document.getElementById("nav");
+            nav.className='box_nav_2';
+        }else if(scroll_pos <= 500){
+            var nav = document.getElementById("nav");
+            nav.className='box_nav_1';
+        }
+    }
+
+    window.addEventListener('scroll', function(e) {
+        last_known_scroll_position = window.scrollY;
+        if (!ticking) {
+          window.requestAnimationFrame(function() {
+            doSomething(last_known_scroll_position);
+            ticking = false;
+          });
+        }
+        ticking = true;
+  });
+    </script>
+	
+</body>
+
+</html>
