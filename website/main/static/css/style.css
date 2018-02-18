@@ -33,6 +33,12 @@
 	
 	float:left;
 }
+.box_login{
+	margin-top:100px;
+	margin-left:45%;
+	width:10%;
+}
+
 .box_nav_2{
     height: 50px;
     width: 100%;

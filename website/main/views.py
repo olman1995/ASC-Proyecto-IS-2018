@@ -12,6 +12,18 @@ def index(request):
 
 def login(request):
     template = loader.get_template('login.html')
-    
-    context={}
-    return HttpResponse(template.render(context,request))
+    if request.method == 'POST':
+        context={}
+        #return HttpResponseRedirect("/inicio")
+        nombre = request.POST['nombre']
+        contrasena = request.POST['contrasena']
+        
+        for i in usuario.objects.all():
+            if i.nombre==nombre and i.contrasena == contrasena:
+                template = loader.get_template('main.html')
+                return HttpResponse(template.render(context,request))
+                
+        return HttpResponse(template.render(context,request))
+    else:
+        context={}
+        return HttpResponse(template.render(context,request))
