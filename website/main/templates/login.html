@@ -19,22 +19,59 @@
 <body>
 	
 	<div id="header" class="box_header"> 
-		<div id="title" class="box_title"><h1>S-AGE-Estimate</h1></div>
-		<div id="nav" class="box_nav_1"> 
+		<div id="nav" class="box_nav">
+			<div class="box_title">
+				<h1>Sistema de estimacion de edad </h1>
+			</div>
+			
+			<div class="box_login">
 
-		 </div>
+		 	</div>
+
+		</div>
+		<div id="" class="box_menu_1"> 
+				 
+		</div>
+		<div id="" class="box_menu_2"> 
+			<div class="box_menu_element_1"> Ingresar </div>
+		</div>	
+		
 	</div>
 	<div id="body" class="box_body">
-	<div class="box_login">
-		<h1>login</h1>
+		<div class="box_content">
 		<form action="login" method="POST" enctype="multipart/form-data">
 			{% csrf_token %}
-			<input type="text" name="nombre" required>
-			<input type="password" name="contrasena" required>
-			<input type="submit" value="ingresar">
+			<div class="box_login_3">
+			 			<table  >
+			  <tr>
+			    <td colspan="2" class="table_2" ><h1>Ingresar</h1></td>
+			   
+			  </tr>
+			  <tr>
+			    <td class="table_1" >Nombre:</td>
+			    <td><input type="text" class="input_text_1" name="nombre" required></td> 
+			  </tr>
+  			  <tr>
+			    <td class="table_1"  >Contraseña:</td>
+			    <td><input type="password" class="input_text_1" name="contrasena" required></td> 
+			  </tr>
+ 			  <tr>
+			    <td></td>
+			    <td><input type="submit" class="buton_1" value="ingresar"></td> 
+			  </tr>
+   			  <tr>
+			    <td></td>
+			    <td></td> 
+			  </tr>
+			</table>
+			</div>
+
+			
+			
+			
 		</form>
-	</div>
-		
+			
+		</div>
 	</div>
 	<div id="footer" class="box_footer"></div>
 

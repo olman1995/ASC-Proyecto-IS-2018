@@ -19,25 +19,63 @@
 <body>
 	
 	<div id="header" class="box_header"> 
-		<div id="title" class="box_title"><h1>S-AGE-Estimate</h1></div>
-		<div id="nav" class="box_nav_1"> 
-			<div class="box_login_1">
+		<div id="nav" class="box_nav">
+			<div class="box_title">
+				<h1>Sistema de estimacion de edad </h1>
+			</div>
+			
+			<div class="box_login">
+				<div class="box_login_1">
+						<a class="link" href="{% url 'login' %}">
+						 
+							Ingresar
+						</a>
+				</div>
 				<div class="box_login_2">
-					<a href="{% url 'login' %}">
-					 
-						Login
-					</a>
+						<a href="{% url 'login' %}">
+							<i class="material-icons md-48 rgba-primary-2 ">person</i> 
+						</a>
 				</div>
-				<div class="box_login_3">
-					<a href="{% url 'login' %}">
-						<i class="material-icons md-36 md-dark ">person</i> 
-					</a>
-				</div>
+		 	</div>
 
-		 	</div> 
-		 </div>
+		</div>
+		<div id="" class="box_menu_1"> 
+				 
+		</div>
+		<div id="" class="box_menu_2"> 
+			<div class="box_menu_element_1"> Principal </div>
+			<div class="box_menu_element_2"> Informacion </div>
+			<div class="box_menu_element_2"> Contactenos </div>	 
+		</div>	
+		
 	</div>
-	<div id="body" class="box_body"></div>
+	<div id="body" class="box_body">
+		<div class="box_content">
+			<div class="box_colum">
+			<h1>Lorem ipsum dolor</h1>
+			<br>
+			<hr>
+			<br>
+
+			<p class="text_1">
+			<img src="{% static 'images/img-1.jpg' %}" style="height: 150px; margin:10px;" align="left" />
+
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a nisi ornare, tincidunt lectus sed, varius libero. Aenean sodales, lectus efficitur tincidunt facilisis, massa magna sodales nisl, vitae porttitor ante enim nec nisl. Sed pulvinar tristique risus sodales porta. Phasellus laoreet porta tincidunt. Curabitur neque velit, interdum quis sapien id, porttitor fermentum lectus. Mauris dapibus ligula eu orci euismod, ac venenatis tellus ultrices. In finibus imperdiet velit nec faucibus. Etiam eleifend purus a risus fermentum egestas. Quisque augue nunc, ultricies vel neque vitae, consectetur luctus nulla.
+
+Ut nunc sapien, suscipit non iaculis vitae, mollis at neque. 
+			<p>
+			</div>
+			<div class="box_colum">
+			<p class="text_1">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a nisi ornare, tincidunt lectus sed, varius libero. Aenean sodales, lectus efficitur tincidunt facilisis, massa magna sodales nisl, vitae porttitor ante enim nec nisl. Sed pulvinar tristique risus sodales porta. Phasellus laoreet porta tincidunt. Curabitur neque velit, interdum quis sapien id, porttitor fermentum lectus. Mauris dapibus ligula eu orci euismod, ac venenatis tellus ultrices. In finibus imperdiet velit nec faucibus. Etiam eleifend purus a risus fermentum egestas. Quisque augue nunc, ultricies vel neque vitae, consectetur luctus nulla.
+
+Ut nunc sapien, suscipit non iaculis vitae, mollis at neque. 
+			<p>
+
+			</div>
+			
+		</div>
+	</div>
 	<div id="footer" class="box_footer"></div>
 
 	
