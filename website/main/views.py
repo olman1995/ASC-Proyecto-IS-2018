@@ -6,7 +6,11 @@ from main.models import usuario
 
 def index(request):
     template = loader.get_template('main.html')
-    print(usuario.objects.all())
+    context={}
+    return HttpResponse(template.render(context,request))
+
+def medico(request):
+    template = loader.get_template('medico.html')
     context={}
     return HttpResponse(template.render(context,request))
 
@@ -20,8 +24,7 @@ def login(request):
         
         for i in usuario.objects.all():
             if i.nombre==nombre and i.contrasena == contrasena:
-                template = loader.get_template('main.html')
-                return HttpResponse(template.render(context,request))
+                return HttpResponseRedirect("medico")
                 
         return HttpResponse(template.render(context,request))
     else:

@@ -1,24 +1,22 @@
 (
-    var last_known_scroll_position = 0;
-    var ticking = false;
-    function doSomething(scroll_pos) {
-        if(scroll_pos>500){
-            var nav = document.getElementById("nav");
-            nav.className='box_nav_2';
-        }else if(scroll_pos <= 500){
-            var nav = document.getElementById("nav");
-            nav.className='box_nav_1';
-        }
-    }
+var inputs = document.querySelectorAll( '.inputfile' );
+Array.prototype.forEach.call( inputs, function( input )
+{
+	var label	 = input.nextElementSibling,
+		labelVal = label.innerHTML;
 
-    window.addEventListener('scroll', function(e) {
-        last_known_scroll_position = window.scrollY;
-        if (!ticking) {
-          window.requestAnimationFrame(function() {
-            doSomething(last_known_scroll_position);
-            ticking = false;
-          });
-        }
-        ticking = true;
-    });
+	input.addEventListener( 'change', function( e )
+	{
+		var fileName = '';
+		if( this.files && this.files.length > 1 )
+			fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
+		else
+			fileName = e.target.value.split( '\\' ).pop();
+
+		if( fileName )
+			label.querySelector( 'span' ).innerHTML = fileName;
+		else
+			label.innerHTML = labelVal;
+	});
+});
 )()

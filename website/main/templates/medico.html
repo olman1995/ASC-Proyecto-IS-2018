@@ -1,0 +1,83 @@
+{%load staticfiles%}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/script.js" ></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <title>S-AGE-Estimate</title>
+</head>
+
+<body>
+	
+	<div id="header" class="box_header"> 
+		<div id="nav" class="box_nav">
+			<div class="box_title">
+				<h1>Sistema de estimacion de edad </h1>
+			</div>
+			
+			<div class="box_login">
+				<div class="box_login_1">
+						<a class="link" href="{% url 'login' %}">
+						 
+							Ingresar
+						</a>
+				</div>
+				<div class="box_login_2">
+						<a href="{% url 'login' %}">
+							<i class="material-icons md-48 rgba-primary-2 ">person</i> 
+						</a>
+				</div>
+		 	</div>
+
+		</div>
+		<div id="" class="box_menu_1"> 
+				 
+		</div>
+		<div id="" class="box_menu_2"> 
+			<div class="box_menu_element_1"> Estimar edad </div> 
+		</div>	
+		
+	</div>
+	<div id="body" class="box_body">
+		<div class="box_content">
+		<form action="/inicio/imagen" method="POST" enctype="multipart/form-data">
+    		{% csrf_token %}
+			<div class="box_colum">
+				<h1>Cargar imagen</h1>
+				<br>
+				<hr>
+				<br>
+<input type="file" name="file" id="file" class="inputfile" />
+<label for="file"><strong>Choose a file</strong></label>
+			</div>
+			<div class="box_colum">
+			
+			</div>
+		</form>
+		</div>
+	</div>
+	<div id="footer" class="box_footer">
+
+				
+ 	<div class="box_info_1">
+		<h3>Contáctenos</h3>				
+		<p>+(506) 8888 8888</p>
+		<p>info@see.com</p>
+        <p>Copyright &copy; see.com 2017</p>
+	</div>
+        
+	</div>
+
+	
+</body>
+
+</html>
