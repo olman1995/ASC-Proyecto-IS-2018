@@ -5,7 +5,7 @@ from django.shortcuts import render
 from main.models import usuario
 
 def index(request):
-    template = loader.get_template('main.html')
+    template = loader.get_template('index.html')
     context={}
     return HttpResponse(template.render(context,request))
 
@@ -15,7 +15,7 @@ def medico(request):
     return HttpResponse(template.render(context,request))
 
 def login(request):
-    template = loader.get_template('login.html')
+    template = loader.get_template('login_datos.html')
     if request.method == 'POST':
         context={}
         #return HttpResponseRedirect("/inicio")
