@@ -3,6 +3,9 @@ from django.template import loader
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from main.models import usuario
+from main.back_end.control.UIUsuario import UIUsuario
+
+usuario = UIUsuario()
 
 def index(request):
     template = loader.get_template('index.html')
@@ -36,12 +39,9 @@ def login(request):
         #return HttpResponseRedirect("/inicio")
         nombre = request.POST['nombre']
         contrasena = request.POST['contrasena']
-        
-        for i in usuario.objects.all():
-            if i.nombre==nombre and i.contrasena == contrasena:
-                return HttpResponseRedirect("principal")
-                
-        return HttpResponse(template.render(context,request))
+        usuario.ingresar(nombre,contrasena)
+        return HttpResponseRedirect("principal")            
+        #return HttpResponse(template.render(context,request))
     else:
         context={}
         return HttpResponse(template.render(context,request))
