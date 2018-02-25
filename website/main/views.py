@@ -2,6 +2,13 @@ from django.http import HttpResponse
 from django.template import loader
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
+from django.template.context_processors import request
+from django.core.files.storage import FileSystemStorage
+from django.core.files.base import ContentFile
+from django.db import models
+
+import os
+
 from main.models import usuario
 from main.back_end.control.UIUsuario import UIUsuario
 
@@ -19,8 +26,25 @@ def medico(request):
 
 def cargar_imagen(request):
     template = loader.get_template('cargar_imagen.html')
-    context={}    
+    
+    if request.method == 'POST':
+        print("imagen 1")
+        subir_imagen(request.FILES['img'])
+        context={}
+        return HttpResponse(template.render(context,request))
+    context={}
     return HttpResponse(template.render(context,request))
+
+
+def subir_imagen(file):
+    directory=os.path.split(os.path.abspath(__file__))[0]+'/media/upload/'
+    if not os.path.exists('upload/'):
+        os.mkdir('upload/')
+    fs = FileSystemStorage(location=directory)
+    filename = fs.save(str(file), file)
+    uploaded_file_url = fs.url(filename)
+
+    return True
 
 def cargar_paciente(request):
     template = loader.get_template('cargar_paciente.html')

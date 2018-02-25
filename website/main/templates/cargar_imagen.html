@@ -94,12 +94,14 @@
 	  	</div>
 	</aside>
 	
-          
+        
 <div class="file-upload">
+    <form action="/inicio/cargar_imagen" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
   <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Seleccionar imagen</button>
 
   <div class="image-upload-wrap">
-    <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+    <input class="file-upload-input" type='file' onchange="readURL(this);" name="img" accept="image/*" />
     <div class="drag-text">
       <h3>Arrastre o seleccione una imagen</h3>
     </div>
@@ -111,6 +113,8 @@
     </div>
   </div>
    <button class="file-upload-btn" type="button">Cargar imagen</button>
+   <input type="submit" class="file-upload-btn" value="Cargar imagen">
+   </form>
 </div>
 </div> 
   

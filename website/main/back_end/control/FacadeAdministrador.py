@@ -3,7 +3,7 @@ from .Facade import Facade
 class FacadeAdministrador(Facade):
     
     def __init__(self):
-        Facade.__init__()
+        Facade.__init__(self)
     
     def cargar_imagenes(self):
         Facade.cargar_imagenes(self)
