@@ -1,8 +1,10 @@
 var searchData=
 [
-  ['gestormuestra',['GestorMuestra',['../namespace_gestor_muestra.html',1,'']]],
-  ['gestormuestra_2epy',['GestorMuestra.py',['../_gestor_muestra_8py.html',1,'']]],
-  ['gestorpaciente',['GestorPaciente',['../namespace_gestor_paciente.html',1,'']]],
-  ['gestorpaciente_2epy',['GestorPaciente.py',['../_gestor_paciente_8py.html',1,'']]],
-  ['guardar_5finformacion_5fpaciente',['guardar_informacion_paciente',['../class_control_1_1_control.html#a0dc2a9739a717d5ff1163b803ddb8b26',1,'Control.Control.guardar_informacion_paciente()'],['../class_facade_1_1_facade.html#a2d6ce899835aaae1a3b6022444d7127a',1,'Facade.Facade.guardar_informacion_paciente()'],['../class_facede_medico_1_1_facade_medico.html#a4acf15afa074658561ab423294821c74',1,'FacedeMedico.FacadeMedico.guardar_informacion_paciente()']]]
+  ['facade',['Facade',['../class_facade_1_1_facade.html',1,'Facade.Facade'],['../namespace_facade.html',1,'Facade'],['../class_u_i_usuario_1_1_u_i_usuario.html#a03b33bc6d21217abcdbaef28c27c24e9',1,'UIUsuario.UIUsuario.facade()']]],
+  ['facade_2epy',['Facade.py',['../_facade_8py.html',1,'']]],
+  ['facadeadministrador',['FacadeAdministrador',['../class_facade_administrador_1_1_facade_administrador.html',1,'FacadeAdministrador.FacadeAdministrador'],['../namespace_facade_administrador.html',1,'FacadeAdministrador']]],
+  ['facadeadministrador_2epy',['FacadeAdministrador.py',['../_facade_administrador_8py.html',1,'']]],
+  ['facademedico',['FacadeMedico',['../class_facede_medico_1_1_facade_medico.html',1,'FacedeMedico']]],
+  ['facedemedico',['FacedeMedico',['../namespace_facede_medico.html',1,'']]],
+  ['facedemedico_2epy',['FacedeMedico.py',['../_facede_medico_8py.html',1,'']]]
 ];

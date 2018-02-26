@@ -51,14 +51,14 @@ class Control:
     def cargar_cvs(self):
         return True
     
-    ## Documentation Cargar imagen.
-    #  @param self : class elemeant
+    ## Documentation clacular_MAE.
+    #  @param self :
     #  @return true
     def calcular_MAE(self):
         return True
     
-    ## Documentation Cargar imagen.
-    #  @param self : class elemeant
+    ## Documentation Calcuar_MSE .
+    #  @param self : 
     #  @return true
     def calcular_MSE(self):
         return True
