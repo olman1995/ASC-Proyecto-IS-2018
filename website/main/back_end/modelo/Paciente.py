@@ -14,3 +14,6 @@ class Paciente():
         self.hospital = None
         self.img = Imagen()
         self.red = RED()
+
+    def estimar_edad(self):
+        return True

@@ -17,6 +17,7 @@ class DaoBDPaciente:
     
     ## Documentation guardar_informacion_paciente.
     #  @param self : 
+    #  @param datos : DTOPaciente
     #  @return true
     def guardar_informacion_paciente(self,datos):
         return True

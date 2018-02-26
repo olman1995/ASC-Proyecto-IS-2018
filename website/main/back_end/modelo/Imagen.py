@@ -16,7 +16,7 @@ class Imagen:
     def leer_imagen(self,directorio):
         self.img = cv2.imread(directorio)
         #self.cambiar_dimenciones_imagen(Configuracion.IMG_X, Configuracion.IMG_Y)
-        self.vectorizar()
+        #self.vectorizar()
         return True 
 
     def cambiar_tamano_porcentual_imagen(self,porcentaje_x,porcentaje_y):
