@@ -16,17 +16,17 @@ Inheritance diagram for Facade.\+Facade\+:\begin{figure}[H]
 \item 
 def \mbox{\hyperlink{class_facade_1_1_facade_ad3ab1700c8824f9711bb33c34187f2b4}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self)
 \item 
-def \mbox{\hyperlink{class_facade_1_1_facade_a04ad2739895ce3afb592870e79e90d1d}{cargar\+\_\+imagen}} (self)
+def \mbox{\hyperlink{class_facade_1_1_facade_ab29afbe3462ddbb2e6d8203d20f610ae}{cargar\+\_\+imagen}} (self, nombre)
 \begin{DoxyCompactList}\small\item\em Documentation Cargar imagen. \end{DoxyCompactList}\item 
 def \mbox{\hyperlink{class_facade_1_1_facade_a31c82e317bb43cffa46140c2826a908b}{estimar\+\_\+edad}} (self)
 \begin{DoxyCompactList}\small\item\em Documentation estimar\+\_\+edad. \end{DoxyCompactList}\item 
 def \mbox{\hyperlink{class_facade_1_1_facade_a92d3a050a1526997ed8d0c080c016b77}{desplegar\+\_\+edad}} (self)
 \begin{DoxyCompactList}\small\item\em Documentation desplegar\+\_\+edad. \end{DoxyCompactList}\item 
-def \mbox{\hyperlink{class_facade_1_1_facade_a2d6ce899835aaae1a3b6022444d7127a}{guardar\+\_\+informacion\+\_\+paciente}} (self)
+def \mbox{\hyperlink{class_facade_1_1_facade_a1bf0fe7872a81826af422d1efeccef92}{guardar\+\_\+informacion\+\_\+paciente}} (self, datos)
 \begin{DoxyCompactList}\small\item\em Documentation guardar\+\_\+informacion\+\_\+paciente. \end{DoxyCompactList}\item 
-def \mbox{\hyperlink{class_facade_1_1_facade_a04f3d8f489b9054d4d40ac2a60c1881e}{cargar\+\_\+imagenes}} (self)
+def \mbox{\hyperlink{class_facade_1_1_facade_a1771449006d9324bae3c3449f59b8fe6}{cargar\+\_\+imagenes}} (self, direccion)
 \begin{DoxyCompactList}\small\item\em Documentation Cargar\+\_\+imagenes. \end{DoxyCompactList}\item 
-def \mbox{\hyperlink{class_facade_1_1_facade_a85dbe0a181d1c4665004b284f13e3632}{cargar\+\_\+cvs}} (self)
+def \mbox{\hyperlink{class_facade_1_1_facade_ad01d3a1108a539ada2d0615c53b160de}{cargar\+\_\+cvs}} (self, nombre)
 \begin{DoxyCompactList}\small\item\em Documentation Cargar\+\_\+cvs. \end{DoxyCompactList}\item 
 def \mbox{\hyperlink{class_facade_1_1_facade_abb62f6ed9e166bc1041ad7a3c57c4d58}{calcular\+\_\+\+M\+AE}} (self)
 \begin{DoxyCompactList}\small\item\em Documentation clacular\+\_\+\+M\+AE. \end{DoxyCompactList}\item 
@@ -90,11 +90,11 @@ Documentation Calcuar\+\_\+\+M\+SE .
 \begin{DoxyReturn}{Returns}
 true 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_facade_1_1_facade_a85dbe0a181d1c4665004b284f13e3632}\label{class_facade_1_1_facade_a85dbe0a181d1c4665004b284f13e3632}} 
+\mbox{\Hypertarget{class_facade_1_1_facade_ad01d3a1108a539ada2d0615c53b160de}\label{class_facade_1_1_facade_ad01d3a1108a539ada2d0615c53b160de}} 
 \index{Facade\+::\+Facade@{Facade\+::\+Facade}!cargar\+\_\+cvs@{cargar\+\_\+cvs}}
 \index{cargar\+\_\+cvs@{cargar\+\_\+cvs}!Facade\+::\+Facade@{Facade\+::\+Facade}}
 \subsubsection{\texorpdfstring{cargar\+\_\+cvs()}{cargar\_cvs()}}
-{\footnotesize\ttfamily def Facade.\+Facade.\+cargar\+\_\+cvs (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily def Facade.\+Facade.\+cargar\+\_\+cvs (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{nombre }\end{DoxyParamCaption})}
 
 
 
@@ -104,15 +104,17 @@ Documentation Cargar\+\_\+cvs.
 \begin{DoxyParams}{Parameters}
 {\em self} & \+: \\
 \hline
+{\em nombre} & \+: string \\
+\hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 true 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_facade_1_1_facade_a04ad2739895ce3afb592870e79e90d1d}\label{class_facade_1_1_facade_a04ad2739895ce3afb592870e79e90d1d}} 
+\mbox{\Hypertarget{class_facade_1_1_facade_ab29afbe3462ddbb2e6d8203d20f610ae}\label{class_facade_1_1_facade_ab29afbe3462ddbb2e6d8203d20f610ae}} 
 \index{Facade\+::\+Facade@{Facade\+::\+Facade}!cargar\+\_\+imagen@{cargar\+\_\+imagen}}
 \index{cargar\+\_\+imagen@{cargar\+\_\+imagen}!Facade\+::\+Facade@{Facade\+::\+Facade}}
 \subsubsection{\texorpdfstring{cargar\+\_\+imagen()}{cargar\_imagen()}}
-{\footnotesize\ttfamily def Facade.\+Facade.\+cargar\+\_\+imagen (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily def Facade.\+Facade.\+cargar\+\_\+imagen (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{nombre }\end{DoxyParamCaption})}
 
 
 
@@ -122,15 +124,18 @@ Documentation Cargar imagen.
 \begin{DoxyParams}{Parameters}
 {\em self} & \+: \\
 \hline
+{\em nombre} & \+: string ~\newline
+ \\
+\hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 true 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_facade_1_1_facade_a04f3d8f489b9054d4d40ac2a60c1881e}\label{class_facade_1_1_facade_a04f3d8f489b9054d4d40ac2a60c1881e}} 
+\mbox{\Hypertarget{class_facade_1_1_facade_a1771449006d9324bae3c3449f59b8fe6}\label{class_facade_1_1_facade_a1771449006d9324bae3c3449f59b8fe6}} 
 \index{Facade\+::\+Facade@{Facade\+::\+Facade}!cargar\+\_\+imagenes@{cargar\+\_\+imagenes}}
 \index{cargar\+\_\+imagenes@{cargar\+\_\+imagenes}!Facade\+::\+Facade@{Facade\+::\+Facade}}
 \subsubsection{\texorpdfstring{cargar\+\_\+imagenes()}{cargar\_imagenes()}}
-{\footnotesize\ttfamily def Facade.\+Facade.\+cargar\+\_\+imagenes (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily def Facade.\+Facade.\+cargar\+\_\+imagenes (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{direccion }\end{DoxyParamCaption})}
 
 
 
@@ -139,6 +144,8 @@ Documentation Cargar\+\_\+imagenes.
 
 \begin{DoxyParams}{Parameters}
 {\em self} & \+: \\
+\hline
+{\em direccion} & \+: string \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -180,11 +187,11 @@ Documentation estimar\+\_\+edad.
 \begin{DoxyReturn}{Returns}
 true 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_facade_1_1_facade_a2d6ce899835aaae1a3b6022444d7127a}\label{class_facade_1_1_facade_a2d6ce899835aaae1a3b6022444d7127a}} 
+\mbox{\Hypertarget{class_facade_1_1_facade_a1bf0fe7872a81826af422d1efeccef92}\label{class_facade_1_1_facade_a1bf0fe7872a81826af422d1efeccef92}} 
 \index{Facade\+::\+Facade@{Facade\+::\+Facade}!guardar\+\_\+informacion\+\_\+paciente@{guardar\+\_\+informacion\+\_\+paciente}}
 \index{guardar\+\_\+informacion\+\_\+paciente@{guardar\+\_\+informacion\+\_\+paciente}!Facade\+::\+Facade@{Facade\+::\+Facade}}
 \subsubsection{\texorpdfstring{guardar\+\_\+informacion\+\_\+paciente()}{guardar\_informacion\_paciente()}}
-{\footnotesize\ttfamily def Facade.\+Facade.\+guardar\+\_\+informacion\+\_\+paciente (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily def Facade.\+Facade.\+guardar\+\_\+informacion\+\_\+paciente (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{datos }\end{DoxyParamCaption})}
 
 
 
@@ -193,6 +200,8 @@ Documentation guardar\+\_\+informacion\+\_\+paciente.
 
 \begin{DoxyParams}{Parameters}
 {\em self} & \+: \\
+\hline
+{\em datos} & \+: \mbox{\hyperlink{namespace_d_t_o_paciente}{D\+T\+O\+Paciente}} \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -215,4 +224,4 @@ The constructor.
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-control/\mbox{\hyperlink{_facade_8py}{Facade.\+py}}\end{DoxyCompactItemize}
+C\+:/\+Users/olman/\+Documents/\+Git\+Hub/\+A\+S\+C-\/\+Proyecto-\/\+I\+S-\/2018/website/main/back\+\_\+end/control/\mbox{\hyperlink{_facade_8py}{Facade.\+py}}\end{DoxyCompactItemize}

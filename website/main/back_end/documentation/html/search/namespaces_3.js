@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['gestormuestra',['GestorMuestra',['../namespace_gestor_muestra.html',1,'']]],
-  ['gestorpaciente',['GestorPaciente',['../namespace_gestor_paciente.html',1,'']]]
+  ['facade',['Facade',['../namespace_facade.html',1,'']]],
+  ['facadeadministrador',['FacadeAdministrador',['../namespace_facade_administrador.html',1,'']]],
+  ['facedemedico',['FacedeMedico',['../namespace_facede_medico.html',1,'']]]
 ];

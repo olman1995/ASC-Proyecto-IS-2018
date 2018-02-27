@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['red',['RED',['../class_r_e_d_1_1_r_e_d.html',1,'RED']]]
+  ['paciente',['Paciente',['../class_paciente_1_1_paciente.html',1,'Paciente']]],
+  ['prueba',['Prueba',['../class_prueba_1_1_prueba.html',1,'Prueba']]]
 ];

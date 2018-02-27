@@ -39,6 +39,7 @@ class Control:
     
     ## Documentation guardar_informacion_paciente.
     #  @param self : 
+    #  @param datos : DTOPaciente 
     #  @return true
     def guardar_informacion_paciente(self, datos):
         self.gestor_paciente.guardar_informacion_paciente(datos)
@@ -46,26 +47,32 @@ class Control:
     
     ## Documentation Cargar_imagenes.
     #  @param self : 
+    #  @parma nombre : string
     #  @return true
-    def cargar_imagenes(self):
+    def cargar_imagenes(self,direccion):
+        self.cargar_imagen(direccion)
         return True
     
     ## Documentation Cargar_cvs.
     #  @param self : 
+    #  @param nombre : string
     #  @return true
-    def cargar_cvs(self):
+    def cargar_cvs(self,nombre):
+        self.cargar_cvs(nombre)
         return True
     
     ## Documentation clacular_MAE.
     #  @param self :
     #  @return true
     def calcular_MAE(self):
+        self.calcular_MAE()
         return True
     
     ## Documentation Calcuar_MSE .
     #  @param self : 
     #  @return true
     def calcular_MSE(self):
+        self.calcular_MSE()
         return True
     
         

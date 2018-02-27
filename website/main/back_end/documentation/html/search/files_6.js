@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['paciente_2epy',['Paciente.py',['../_paciente_8py.html',1,'']]],
-  ['prueba_2epy',['Prueba.py',['../_prueba_8py.html',1,'']]]
+  ['mae_2epy',['MAE.py',['../_m_a_e_8py.html',1,'']]],
+  ['mse_2epy',['MSE.py',['../_m_s_e_8py.html',1,'']]],
+  ['muestra_2epy',['Muestra.py',['../_muestra_8py.html',1,'']]]
 ];

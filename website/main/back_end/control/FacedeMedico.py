@@ -15,9 +15,10 @@ class FacadeMedico(Facade):
 
     ## Documentation Cargar imagen.
     #  @param self : 
+    #  @param nombre : string
     #  @return true
-    def cargar_imagen(self):
-        Facade.cargar_imagen(self)
+    def cargar_imagen(self,nombre):
+        Facade.cargar_imagen(self,nombre)
         return True
 
     ## Documentation estimar_edad.
@@ -36,7 +37,8 @@ class FacadeMedico(Facade):
     
     ## Documentation guardar_informacion_paciente.
     #  @param self : 
+    #  @param datos : DTOPaciente
     #  @return true
-    def guardar_informacion_paciente(self):
-        Facade.guardar_informacion_paciente(self)
+    def guardar_informacion_paciente(self,datos):
+        Facade.guardar_informacion_paciente(datos)
         return True

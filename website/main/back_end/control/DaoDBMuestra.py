@@ -13,12 +13,14 @@ class DaoDBMuestra:
         
     ## Documentation Cargar_imagenes.
     #  @param self : 
+    #  @param direccion : string
     #  @return true
-    def cargar_imagenes(self):
+    def cargar_imagenes(self,direccion):
         return True
     
     ## Documentation Cargar_cvs.
     #  @param self : 
+    #  @param nombr : string
     #  @return true
-    def cargar_cvs(self):
+    def cargar_cvs(self,nombre):
         return True

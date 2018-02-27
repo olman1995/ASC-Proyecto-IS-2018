@@ -14,9 +14,10 @@ class Facade:
         self.control=Control()
     
     ## Documentation Cargar imagen.
-    #  @param self : 
+    #  @param self :
+    #  @param nombre : string  
     #  @return true
-    def cargar_imagen(self):
+    def cargar_imagen(self,nombre):
         self.control.cargar_imagen()
         return True
     
@@ -36,23 +37,26 @@ class Facade:
     
     ## Documentation guardar_informacion_paciente.
     #  @param self : 
+    #  @param datos : DTOPaciente 
     #  @return true
-    def guardar_informacion_paciente(self):
-        self.control.guardar_informacion_paciente()
+    def guardar_informacion_paciente(self,datos):
+        self.control.guardar_informacion_paciente(datos)
         return True
     
     ## Documentation Cargar_imagenes.
     #  @param self : 
+    #  @param direccion : string
     #  @return true
-    def cargar_imagenes(self):
-        self.control.cargar_imagenes()
+    def cargar_imagenes(self,direccion):
+        self.control.cargar_imagenes(direccion)
         return True
     
     ## Documentation Cargar_cvs.
     #  @param self : 
+    #  @param nombre : string
     #  @return true
-    def cargar_cvs(self):
-        self.control.cargar_cvs()
+    def cargar_cvs(self,nombre):
+        self.control.cargar_cvs(nombre)
         return True
         
     ## Documentation clacular_MAE.

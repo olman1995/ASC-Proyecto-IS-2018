@@ -11,6 +11,8 @@ import os
 
 from main.models import usuario
 from main.back_end.control.UIUsuario import UIUsuario
+from main.back_end.control.DaoBDPaciente import DaoBDPaciente
+from main.back_end.control.DTOPaciente import DTOPaciente
 
 usuario = UIUsuario()
 

@@ -15,16 +15,18 @@ class FacadeAdministrador(Facade):
     
     ## Documentation Cargar imagenes.
     #  @param self : 
+    #  @param direccion : string
     #  @return true
-    def cargar_imagenes(self):
+    def cargar_imagenes(self,direccion):
         Facade.cargar_imagenes(self)
         return True
     
     ## Documentation Cargar_cvs.
-    #  @param self : 
+    #  @param self :
+    #  @param nombre : string
     #  @return true    
-    def cargar_cvs(self):
-        Facade.cargar_cvs(self)
+    def cargar_cvs(self,nombre):
+        Facade.cargar_cvs(self,nombre)
         return True
     
     ## Documentation clacular_MAE.

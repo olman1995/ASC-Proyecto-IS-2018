@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['red',['RED',['../namespace_r_e_d.html',1,'']]]
+  ['paciente',['Paciente',['../namespace_paciente.html',1,'']]],
+  ['prueba',['Prueba',['../namespace_prueba.html',1,'']]]
 ];
