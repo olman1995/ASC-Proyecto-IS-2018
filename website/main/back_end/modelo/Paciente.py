@@ -26,5 +26,6 @@ class Paciente:
     ## Documentation estimar_edad.
     #  @param self : 
     #  @return true
-    def estimar_edad(self):
-        return True
+    def estimar_edad(self,sexo):
+        resultado=self.estimador.estimar(sexo)
+        return resultado

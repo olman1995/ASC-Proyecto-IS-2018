@@ -11,7 +11,7 @@ class FacadeMedico(Facade):
     
     def __init__(self):
         ## The constructor.
-        Facade.__init__()
+        Facade.__init__(self)
 
     ## Documentation Cargar imagen.
     #  @param self : 
@@ -24,9 +24,9 @@ class FacadeMedico(Facade):
     ## Documentation estimar_edad.
     #  @param self : 
     #  @return true
-    def estimar_edad(self):
-        Facade.estimar_edad(self)
-        return True
+    def estimar_edad(self,sexo):
+        resultado=Facade.estimar_edad(self, sexo)
+        return resultado
 
     ## Documentation desplegar_edad.
     #  @param self : 

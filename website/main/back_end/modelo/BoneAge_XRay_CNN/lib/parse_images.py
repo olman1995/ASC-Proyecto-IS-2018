@@ -45,7 +45,7 @@ def read_images(image_size, train_test_split, gt_columns, image_paths, gt_paths,
         raise ValueError('train_test_split values must sum to 1')
     
     ## Read images from directory
-    print('Reading images from directory...')
+    #print('Reading images from directory...')
     raw = dict()
     for path in image_paths:
         for filename in glob.glob(path): 
@@ -61,7 +61,7 @@ def read_images(image_size, train_test_split, gt_columns, image_paths, gt_paths,
                     print('Error loading image ', filename)
 
     ## Read image id's and class labels from csv, with dictionary mapping ids to ground truth data
-    print('Reading ground truth data...')
+    #print('Reading ground truth data...')
     name_to_output = dict()
     name_to_additional_inputs = dict()
     for path in list(gt_paths.keys()):
@@ -88,8 +88,8 @@ def read_images(image_size, train_test_split, gt_columns, image_paths, gt_paths,
         ## Delete any image_id - ground truth pairs for which there is no corresponding image            
         for key in list(gt_data.keys()):
             if not key in list(raw.keys()):
-                print('WARNING: ground truth value ' + str(key) + 
-                      ' has no corresponding image! This ground truth value will be deleted')
+                #print('WARNING: ground truth value ' + str(key) + 
+                #      ' has no corresponding image! This ground truth value will be deleted')
                 del gt_data[key]
         
         #Delete any images for which there is no corresponding class label

@@ -27,9 +27,9 @@ class GestorPaciente:
     ## Documentation estimar_edad.
     #  @param self : 
     #  @return true
-    def estimar_edad(self):
-        self.paciente.estimar_edad()
-        return True
+    def estimar_edad(self,sexo):
+        resultado=self.paciente.estimar_edad(sexo)
+        return resultado
     
     ## Documentation deplegar_edad.
     #  @param self : 

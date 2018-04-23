@@ -11,7 +11,7 @@ from keras.preprocessing.image import ImageDataGenerator
 from keras.optimizers import SGD, RMSprop, Adagrad, Adadelta, Adam
 from keras.losses import mean_absolute_error, mean_squared_error
 from keras.applications.vgg16 import VGG16
-from lib.tools import features_shape, instantiate_base_model
+from .lib.tools import features_shape, instantiate_base_model
 
 def initialize_parameters():
     '''
@@ -29,7 +29,7 @@ def initialize_parameters():
     
     paths = [root_dir, gt_columns, image_paths, gt_paths, pickled_path, pretrained_tm,
              trained_weights, train_test_image_ids_M, train_test_image_ids_F] ## Do not modify
-    print(paths)
+    #print(paths)
     
     '''
     Define some model attributes. 

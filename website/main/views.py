@@ -30,9 +30,11 @@ def cargar_imagen(request):
     template = loader.get_template('cargar_imagen.html')
     
     if request.method == 'POST':
-        print("imagen 1")
+       
         subir_imagen(request.FILES['img'])
-        context={}
+        resultado=usuario.facade.estimar_edad("F")
+        print(resultado)
+        context={"resultado":resultado}
         return HttpResponse(template.render(context,request))
     context={}
     return HttpResponse(template.render(context,request))

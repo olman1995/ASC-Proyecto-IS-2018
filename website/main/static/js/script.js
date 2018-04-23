@@ -1,4 +1,4 @@
-(
+/*(
 var inputs = document.querySelectorAll( '.inputfile' );
 Array.prototype.forEach.call( inputs, function( input )
 {
@@ -20,3 +20,4 @@ Array.prototype.forEach.call( inputs, function( input )
 	});
 });
 )()
+*/
