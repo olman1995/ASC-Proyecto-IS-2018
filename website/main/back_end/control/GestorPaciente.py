@@ -27,14 +27,14 @@ class GestorPaciente:
     ## Documentation estimar_edad.
     #  @param self : 
     #  @return true
-    def estimar_edad(self,sexo):
-        resultado=self.paciente.estimar_edad(sexo)
+    def estimar_edad(self,sexo,url_imagen):
+        resultado=self.paciente.estimar_edad(sexo,url_imagen)
         return resultado
     
-    ## Documentation deplegar_edad.
+    ## Documentation desplegar_edad.
     #  @param self : 
     #  @return edad = int , estimacion_edad float
-    def deplegar_edad(self):
+    def desplegar_edad(self):
         return self.paciente.edad,self.paciente.estimacion_edad
 
     ## Documentation guardar_informacion_paciente.

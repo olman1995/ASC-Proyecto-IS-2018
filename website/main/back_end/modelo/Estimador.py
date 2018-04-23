@@ -10,10 +10,12 @@ from .BoneAge_XRay_CNN.output_predictions import Predict
 class Estimador:
     def __init__(self):        
         ## The constructor
-        predecir=None
+        self.predecir = Predict()
 
     def estimar(self,sexo="F"):
+        #self.predecir=None
         
-        predecir = Predict();
-        resultado = predecir.predict(sexo)
+        
+        resultado = self.predecir.predict(sexo)
+        
         return resultado

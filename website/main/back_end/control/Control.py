@@ -27,8 +27,8 @@ class Control:
     ## Documentation estimar_edad.
     #  @param self : 
     #  @return true
-    def estimar_edad(self,sexo):
-        resultado=self.gestor_paciente.estimar_edad(sexo)
+    def estimar_edad(self,sexo,url_imagen):
+        resultado=self.gestor_paciente.estimar_edad(sexo,url_imagen)
         return resultado
     
     ## Documentation desplegar_edad.

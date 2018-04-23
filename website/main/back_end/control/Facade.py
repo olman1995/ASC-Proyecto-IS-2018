@@ -24,16 +24,15 @@ class Facade:
     ## Documentation estimar_edad.
     #  @param self : 
     #  @return true
-    def estimar_edad(self,sexo):
-        resultado=self.control.estimar_edad(sexo)
+    def estimar_edad(self,sexo,url_imagen):
+        resultado=self.control.estimar_edad(sexo,url_imagen)
         return resultado
     
     ## Documentation desplegar_edad.
     #  @param self : 
     #  @return true
     def desplegar_edad(self):
-        self.control.desplegar_edad()
-        return 0
+        return self.control.desplegar_edad()
     
     ## Documentation guardar_informacion_paciente.
     #  @param self : 

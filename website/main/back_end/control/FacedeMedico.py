@@ -24,16 +24,15 @@ class FacadeMedico(Facade):
     ## Documentation estimar_edad.
     #  @param self : 
     #  @return true
-    def estimar_edad(self,sexo):
-        resultado=Facade.estimar_edad(self, sexo)
+    def estimar_edad(self,sexo,url_imagen):
+        resultado=Facade.estimar_edad(self, sexo,url_imagen)
         return resultado
 
     ## Documentation desplegar_edad.
     #  @param self : 
     #  @return true
     def desplegar_edad(self):
-        Facade.estimar_edad(self)
-        return 0
+        return Facade.desplegar_edad(self)
     
     ## Documentation guardar_informacion_paciente.
     #  @param self : 

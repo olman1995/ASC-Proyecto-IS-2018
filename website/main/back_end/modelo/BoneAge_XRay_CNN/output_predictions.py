@@ -21,8 +21,9 @@ from .parameters import initialize_parameters
 
 
 class Predict:
-    def __init__(self):
-        self.model_attributes, self.training_scope, self.paths, self.datagen, self.tm = initialize_parameters()
+    
+    
+        
 
 
     def make_predictions(self,attributes, paths, tm, subset=['train', 'val', 'test']):
@@ -78,23 +79,29 @@ class Predict:
             predict_pred = full_model.predict(x_predict)
         
         return(predict_pred)
-    def predict(self,sexo="F"):
-        self.paths[2]=[self.paths[0]+'/dataset/test/*.png']
+
+    def predict(self,sexo):
+        model_attributes,training_scope,paths,datagen,tm= initialize_parameters()
         
-        read_images(self.model_attributes['image_size'], self.model_attributes['train_test_split'],
-                                            self.paths[1], self.paths[2], self.paths[3], self.paths[4])
+        paths[2]=[paths[0]+'/dataset/test/*.png']
         
-        print("asdf")
+        read_images(model_attributes['image_size'], model_attributes['train_test_split'],
+                                            paths[1], paths[2], paths[3], paths[4])
+        
+        
         if sexo=="F":
-            self.model_attributes['gender'] = 'F'
-            self.paths[6] = self.paths[0] + '/weights/best_female_model.h5'
-            result_female = self.make_predictions(self.model_attributes, self.paths, self.tm, [ 'predict'])
+            model_attributes['gender'] = 'F'
+            paths[6] = paths[0] + '/weights/best_female_model.h5'
+            result_female = self.make_predictions(model_attributes, paths, tm, [ 'predict'])
+            
             return result_female
         else:
-            self.model_attributes['gender'] = 'M' 
-            self.paths[6] = self.paths[0] + '/weights/best_male_model.h5'
-            result_male = self.make_predictions(self.model_attributes, self.paths, self.tm, ['predict'])
+            print("M")
+            model_attributes['gender'] = 'M' 
+            paths[6] = paths[0] + '/weights/best_male_model.h5'
+            result_male = self.make_predictions(model_attributes, paths, tm, ['predict'])
+            
             return result_male
-    
+        
 
 

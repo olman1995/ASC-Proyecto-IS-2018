@@ -3,24 +3,15 @@ import numpy as np
 from keras.applications.vgg16 import VGG16
 
 
+
 def features_shape(base_model):
     return((base_model.layers[len(base_model.layers)-1]).output_shape[1:])
 
 
 
 def instantiate_base_model(model_name, input_dim, top=False):
-    if model_name == 'InceptionV3':
-        model = InceptionV3(include_top=top, weights='imagenet', input_shape=input_dim + (3,))
-    elif model_name == 'VGG16':
+    if model_name == 'VGG16':
         model = VGG16(include_top=top, weights='imagenet', input_shape=input_dim + (3,))
-    elif model_name == 'VGG19':
-        model = VGG19(include_top=top, weights='imagenet', input_shape=input_dim + (3,))
-    elif model_name == 'ResNet50':
-        model = ResNet50(include_top=top, weights='imagenet', input_shape=input_dim + (3,))
-    elif model_name == 'Xception':
-        model = Xception(include_top=top, weights='imagenet', input_shape=input_dim + (3,))
-    elif model_name == 'MobileNet':
-        model = MobileNet(include_top=top, weights='imagenet', input_shape=input_dim + (3,))
     else:
         raise ValueError('Model name is case-sensitive. Choose from: InceptionV3, '
                          'VGG16, VGG19, ResNet50, Xception, MobileNet')

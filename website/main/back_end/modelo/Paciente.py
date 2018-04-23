@@ -13,6 +13,7 @@ class Paciente:
     def __init__(self):
         ## The constructor.
         self.edad = None
+        self.sexo = None
         self.estimacion_edad = None
         self.url_imagen = None
         self.nombre = None
@@ -26,6 +27,9 @@ class Paciente:
     ## Documentation estimar_edad.
     #  @param self : 
     #  @return true
-    def estimar_edad(self,sexo):
-        resultado=self.estimador.estimar(sexo)
-        return resultado
+    def estimar_edad(self,sexo,url_imagen):
+        self.sexo=sexo
+        self.url_imagen=url_imagen
+        self.estimacion_edad=self.estimador.estimar(sexo)[0][0]
+        return self.estimacion_edad
+    
