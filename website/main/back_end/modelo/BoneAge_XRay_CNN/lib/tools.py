@@ -4,35 +4,42 @@ from keras.applications.vgg16 import VGG16
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of 00f82b9... website 0.1.18
 class Tools:
    
     def __init__(self):
-        self.model = None
-        self.isModel = False
+        self.model=None
+        self.isModel=False
         
-    def features_shape(self, base_model):
-        return((base_model.layers[len(base_model.layers) - 1]).output_shape[1:])
+    def features_shape(self,base_model):
+        return((base_model.layers[len(base_model.layers)-1]).output_shape[1:])
     
-    def instantiate_base_model(self, model_name, input_dim, top=False):
+    
+    
+    def instantiate_base_model(self,model_name, input_dim, top=False):
         if self.isModel:
             return self.model
         if model_name == 'VGG16':
-            self.isModel = True
+            self.isModel=True
             self.model = VGG16(include_top=top, weights='imagenet', input_shape=input_dim + (3,))
         else:
             raise ValueError('Model name is case-sensitive. Choose from: InceptionV3, '
                              'VGG16, VGG19, ResNet50, Xception, MobileNet')
         return(self.model)
     
-    def format_x(self, x, image_shape, gender=''):
+    
+    def format_x(self,x, image_shape, gender=''):
         if not gender in ['', 'M', 'F']:
             raise ValueError('gender must be one of '', M, F')
-        unscaled = np.array(np.array(list(x.values()))[:, 0].tolist(), dtype='uint8').reshape(len(x), image_shape[0], image_shape[1]).astype('float16')
+        unscaled = np.array(np.array(list(x.values()))[:,0].tolist(), dtype='uint8').reshape(len(x), image_shape[0], image_shape[1]).astype('float16')
         ids = np.array(list(x.keys()))
-        gen = np.array(list(x.values()))[:, 1]
+        gen = np.array(list(x.values()))[:,1]
     
         for i in range(len(unscaled)):
-            unscaled[i] = np.multiply(unscaled[i], 1 / 255)
+            unscaled[i] = np.multiply(unscaled[i], 1/255)
         stacked = np.stack([unscaled, unscaled, unscaled], axis=3)
     
         if gender == 'M':

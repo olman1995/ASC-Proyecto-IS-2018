@@ -1,15 +1,14 @@
-# #@package Control
+##@package Control
 #
 #
 
-
-# # Documentation for a class.
+## Documentation for a class.
 #
 #  Clase DTOPaciente.
 class DTOPaciente:
     
-    def __init__(self, edad, estimacion_edad, url_imagen, nombre, apellido_1, apellido_2, cedula, hospital):
-        # # The constructor.
+    def __init__(self,edad,estimacion_edad,url_imagen,nombre,apellido_1,apellido_2,cedula,hospital):
+        ## The constructor.
         self.edad = edad
         self.estimacion_edad = estimacion_edad
         self.url_imagen = url_imagen

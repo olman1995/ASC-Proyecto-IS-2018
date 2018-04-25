@@ -1,43 +1,42 @@
 from .Facade import Facade
 
-# #@package Control
+##@package Control
 #
 #
 
-
-# # Documentation for a class.
+## Documentation for a class.
 #
 #  Clase FacadeAdministrador.
 class FacadeAdministrador(Facade):
     
     def __init__(self):
-        # # The constructor.
+        ## The constructor.
         Facade.__init__(self)
     
-    # # Documentation Cargar imagenes.
+    ## Documentation Cargar imagenes.
     #  @param self : 
     #  @param direccion : string
     #  @return true
-    def cargar_imagenes(self, direccion):
+    def cargar_imagenes(self,direccion):
         Facade.cargar_imagenes(self)
         return True
     
-    # # Documentation Cargar_cvs.
+    ## Documentation Cargar_cvs.
     #  @param self :
     #  @param nombre : string
     #  @return true    
-    def cargar_cvs(self, nombre):
-        Facade.cargar_cvs(self, nombre)
+    def cargar_cvs(self,nombre):
+        Facade.cargar_cvs(self,nombre)
         return True
     
-    # # Documentation clacular_MAE.
+    ## Documentation clacular_MAE.
     #  @param self :
     #  @return true
     def calcular_MAE(self):
         Facade.calcular_MAE(self)
         return True
     
-    # # Documentation clacular_MSE.
+    ## Documentation clacular_MSE.
     #  @param self :
     #  @return true
     def calcular_MSE(self):
