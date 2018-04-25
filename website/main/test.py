@@ -6,10 +6,11 @@ from .back_end.control.DTOPaciente import DTOPaciente
 from .back_end.control.Control import Control
 from .back_end.control.DaoDBMuestra import DaoDBMuestra
 from main.views import cargar_imagen
-#click izquierdo en el proyecto
-#>django
-#>>managepy. {custon}
-#>>>test main
+# click izquierdo en el proyecto
+# >django
+# >>managepy. {custon}
+# >>>test main
+
 
 class DjangoTest(TestCase):
     
@@ -20,7 +21,7 @@ class DjangoTest(TestCase):
     
     def test_2(self):
         print("Test2: Agregar paciente")
-        dto_paciente = DTOPaciente(10,10," ","olman","castillo","picado",2324,"nose")
+        dto_paciente = DTOPaciente(10, 10, " ", "olman", "castillo", "picado", 2324, "nose")
         paciente = DaoBDPaciente()
         paciente.guardar_informacion_paciente(dto_paciente)
     

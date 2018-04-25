@@ -1,71 +1,72 @@
 from .Control import Control
 
-##@package Control
+# #@package Control
 #
 #
 
-## Documentation for a class.
+
+# # Documentation for a class.
 #
 #  Clase Facade.
 class Facade:
     
     def __init__(self):
-        ## The constructor.
-        self.control=Control()
+        # # The constructor.
+        self.control = Control()
     
-    ## Documentation Cargar imagen.
+    # # Documentation Cargar imagen.
     #  @param self :
     #  @param nombre : string  
     #  @return true
-    def cargar_imagen(self,nombre):
+    def cargar_imagen(self, nombre):
         self.control.cargar_imagen()
         return True
     
-    ## Documentation estimar_edad.
+    # # Documentation estimar_edad.
     #  @param self : 
     #  @return true
-    def estimar_edad(self,sexo,url_imagen):
-        resultado=self.control.estimar_edad(sexo,url_imagen)
+    def estimar_edad(self, sexo, url_imagen):
+        resultado = self.control.estimar_edad(sexo, url_imagen)
         return resultado
     
-    ## Documentation desplegar_edad.
+    # # Documentation desplegar_edad.
     #  @param self : 
     #  @return true
     def desplegar_edad(self):
         return self.control.desplegar_edad()
     
-    ## Documentation guardar_informacion_paciente.
+    # # Documentation guardar_informacion_paciente.
     #  @param self : 
     #  @param datos : DTOPaciente 
     #  @return true
-    def guardar_informacion_paciente(self,datos):
+    def guardar_informacion_paciente(self, datos):
         self.control.guardar_informacion_paciente(datos)
         return True
     
-    ## Documentation Cargar_imagenes.
+    # # Documentation Cargar_imagenes.
     #  @param self : 
     #  @param direccion : string
     #  @return true
-    def cargar_imagenes(self,direccion):
+    def cargar_imagenes(self, direccion):
         self.control.cargar_imagenes(direccion)
         return True
     
-    ## Documentation Cargar_cvs.
+    # # Documentation Cargar_cvs.
     #  @param self : 
     #  @param nombre : string
     #  @return true
-    def cargar_cvs(self,nombre):
+    def cargar_cvs(self, nombre):
         self.control.cargar_cvs(nombre)
         return True
         
-    ## Documentation clacular_MAE.
+    # # Documentation clacular_MAE.
     #  @param self :
     #  @return true
     def calcular_MAE(self):
         self.control.calcular_MAE()
         return True
     
-    ## Documentation Calcuar_MSE .
+    # # Documentation Calcuar_MSE .
     #  @param self : 
     #  @return true
     def calcular_MSE(self):

@@ -12,7 +12,6 @@ import glob
 import csv
 import pickle
 
-
 '''
 ARGUMENTS
 image_size: Tuple of image dimensions for resizing
@@ -36,16 +35,18 @@ Input dictionaries contain the flattened images along with any extra input data
 Output dictionaries contain the output variable (categorical or continuous)
 
 '''
+
+
 def read_images(image_size, train_test_split, gt_columns, image_paths, gt_paths, pickle_dir='', labels=True):
     
-    ## Some error handling
+    # # Some error handling
     if len(train_test_split) < 1 or len(train_test_split) > 3:
         raise ValueError('train_test_split must be a tuple of length 2 or 3')
     if sum(train_test_split) != 1:
         raise ValueError('train_test_split values must sum to 1')
     
-    ## Read images from directory
-    #print('Reading images from directory...')
+    # # Read images from directory
+    # print('Reading images from directory...')
     raw = dict()
     for path in image_paths:
         for filename in glob.glob(path): 
@@ -53,15 +54,15 @@ def read_images(image_size, train_test_split, gt_columns, image_paths, gt_paths,
             if not name in list(raw.keys()):
                 try:
                     im = Image.open(filename)
-                    im = im.convert('L')     # Convert all images to greyscale in case of alternative channel specs
-                    im = im.resize(image_size)  #Resize all images to standard sizing
+                    im = im.convert('L')  # Convert all images to greyscale in case of alternative channel specs
+                    im = im.resize(image_size)  # Resize all images to standard sizing
                     raw[int(name)] = np.array(list(im.getdata()))
                     im.close()
                 except IOError:
                     print('Error loading image ', filename)
 
-    ## Read image id's and class labels from csv, with dictionary mapping ids to ground truth data
-    #print('Reading ground truth data...')
+    # # Read image id's and class labels from csv, with dictionary mapping ids to ground truth data
+    # print('Reading ground truth data...')
     name_to_output = dict()
     name_to_additional_inputs = dict()
     for path in list(gt_paths.keys()):
@@ -70,10 +71,9 @@ def read_images(image_size, train_test_split, gt_columns, image_paths, gt_paths,
             readCSV = csv.reader(csvfile, delimiter=delim)
             headers = next(readCSV)
             
-            ## Handle column labels that are not found in csv
+            # # Handle column labels that are not found in csv
             if not set(gt_columns).issubset(headers):
                 raise ValueError('Unknown column name passed. Insure that case-sensitive column names match csv.')
-
                 
             for row in readCSV:
                 try:
@@ -81,25 +81,24 @@ def read_images(image_size, train_test_split, gt_columns, image_paths, gt_paths,
                     name_to_additional_inputs[int(row[0])] = row[1:]
                 except ValueError as error:
                     print('Issue reading csv... please review format' + repr(error))
-           
             
-    ## Check for mismatched images and ground truth pairs
+    # # Check for mismatched images and ground truth pairs
     for gt_data in [name_to_output, name_to_additional_inputs]:    
-        ## Delete any image_id - ground truth pairs for which there is no corresponding image            
+        # # Delete any image_id - ground truth pairs for which there is no corresponding image            
         for key in list(gt_data.keys()):
             if not key in list(raw.keys()):
-                #print('WARNING: ground truth value ' + str(key) + 
+                # print('WARNING: ground truth value ' + str(key) + 
                 #      ' has no corresponding image! This ground truth value will be deleted')
                 del gt_data[key]
         
-        #Delete any images for which there is no corresponding class label
+        # Delete any images for which there is no corresponding class label
         for key in list(raw.keys()):
             if not key in list(gt_data.keys()):
-                print('WARNING: image id ' + str(key) +
+                print('WARNING: image id ' + str(key) + 
                       ' has no corresponding ground truth data! Image will be deleted')
                 del raw[key]
 
-    ## Check that no repeated images and that each single image maps to a single class label
+    # # Check that no repeated images and that each single image maps to a single class label
     for gt_data in [name_to_output, name_to_additional_inputs]:  
         raw_keys = list(gt_data.keys())
         gt_keys = list(raw.keys())
@@ -109,7 +108,7 @@ def read_images(image_size, train_test_split, gt_columns, image_paths, gt_paths,
         if not len(np.unique(raw_keys)) == len(raw_keys):
             raise ValueError('There are repeated images! Please delete repeats')
     
-    ## Cast data to dictionaries of numpy arrays
+    # # Cast data to dictionaries of numpy arrays
     inputs = dict()
     outputs = dict()
     for key in list(raw.keys()):
@@ -127,12 +126,11 @@ def read_images(image_size, train_test_split, gt_columns, image_paths, gt_paths,
         except ValueError:
             outputs[key] = int(gt_data[key][0] == 'True')
     
-    
-    ## Randomly shuffle data and split into train and validation (and possibly test) sets
+    # # Randomly shuffle data and split into train and validation (and possibly test) sets
     shuffle_ind = np.random.choice(list(inputs.keys()), size=len(inputs), replace=False)
     cutoffs = np.zeros(len(train_test_split), dtype='uint32')
     for i in range(len(train_test_split)):
-        cutoffs[i] = round(np.sum(train_test_split[:i+1]) * len(shuffle_ind))
+        cutoffs[i] = round(np.sum(train_test_split[:i + 1]) * len(shuffle_ind))
     
     inputs_train = {k: inputs[k] for k in shuffle_ind[:cutoffs[0]]}
     outputs_train = {k: outputs[k] for k in shuffle_ind[:cutoffs[0]]}
@@ -146,18 +144,21 @@ def read_images(image_size, train_test_split, gt_columns, image_paths, gt_paths,
         full_dataset.append(outputs_test)
     save_ids('image_id.csv', inputs_train, inputs_val)    
     
-    ## Pickle data
+    # # Pickle data
     print('Pickling data...')
     if not pickle_dir == '':
-        pickle.dump(full_dataset, open(pickle_dir, 'wb'), protocol = 4)
+        pickle.dump(full_dataset, open(pickle_dir, 'wb'), protocol=4)
         
     return(full_dataset)
+
     
 '''
 Read train and test image ids from csv
 '''
+
+
 def train_test_ids(path_to_csv):
-    ## Read image id's to csv
+    # # Read image id's to csv
     ids = []
     f = open(path_to_csv, 'r')
     r = csv.reader(f)
@@ -166,11 +167,13 @@ def train_test_ids(path_to_csv):
     f.close()
     return([[int(i) for i in ids[1]], [int(i) for i in ids[3]]])
 
+
 def unpickle(path): 
     return(pickle.load(open(path, 'rb')))
 
+
 def save_ids(path, id_train, id_val):
-    ## Write image id's of data subsets to csv
+    # # Write image id's of data subsets to csv
     f = open(path, 'w', newline='')
     try:
         writer = csv.writer(f)
