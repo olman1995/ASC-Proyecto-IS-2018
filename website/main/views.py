@@ -30,9 +30,10 @@ def cargar_imagen(request):
     template = loader.get_template('cargar_imagen.html')
     
     if request.method == 'POST':
+        
         template = loader.get_template('cargar_paciente.html')
         subir_imagen(request.FILES['img'])
-        usuario.facade.estimar_edad("M",str(request.FILES['img']))
+        usuario.facade.estimar_edad(request.POST["sexo"],str(request.FILES['img']))
         edad,estimacion=usuario.facade.desplegar_edad()
         context={"estimacion":estimacion}
         return HttpResponse(template.render(context,request))
@@ -53,6 +54,19 @@ def subir_imagen(file):
 def cargar_paciente(request):
     template = loader.get_template('cargar_paciente.html')
     context={}    
+    if request.method == 'POST':
+        template = loader.get_template('cargar_paciente.html')
+        edad=int(request.POST["edad"])
+        estimacion_edad=0
+        url_imagen=" "
+        nombre=request.POST["nombre"]
+        apellido_1=request.POST["apellido1"]
+        apellido_2=request.POST["apellido2"]
+        cedula=request.POST["cedula"]
+        hospital=request.POST["hospital"]
+        datos= DTOPaciente(edad,estimacion_edad,url_imagen,nombre,apellido_1,apellido_2,cedula,hospital)
+        usuario.facade.guardar_informacion_paciente(datos)
+        return HttpResponse(template.render(context,request))
     return HttpResponse(template.render(context,request))
 
 def principal(request):

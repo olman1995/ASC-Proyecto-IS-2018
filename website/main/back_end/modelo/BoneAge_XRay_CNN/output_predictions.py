@@ -97,13 +97,13 @@ class Predict:
             self.model_attributes['gender'] = 'F'
             self.paths[6] = self.paths[0] + '/weights/best_female_model.h5'
             result_female = self.make_predictions(self.model_attributes, self.paths, self.tm, [ 'predict'])
-            
+            K.clear_session()
             return result_female
         else:
             self.model_attributes['gender'] = 'M' 
             self.paths[6] = self.paths[0] + '/weights/best_male_model.h5'
             result_male = self.make_predictions(self.model_attributes, self.paths, self.tm, ['predict'])
-            
+            K.clear_session()
             return result_male
         
 

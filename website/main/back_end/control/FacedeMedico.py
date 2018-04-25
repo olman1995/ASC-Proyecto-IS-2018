@@ -39,5 +39,5 @@ class FacadeMedico(Facade):
     #  @param datos : DTOPaciente
     #  @return true
     def guardar_informacion_paciente(self,datos):
-        Facade.guardar_informacion_paciente(datos)
+        Facade.guardar_informacion_paciente(self,datos)
         return True

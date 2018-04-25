@@ -11,9 +11,9 @@ from keras.preprocessing.image import ImageDataGenerator
 from keras.optimizers import SGD, RMSprop, Adagrad, Adadelta, Adam
 from keras.losses import mean_absolute_error, mean_squared_error
 from keras.applications.vgg16 import VGG16
-from .lib.tools import features_shape, instantiate_base_model
+from .lib.tools import Tools
 
-def initialize_parameters():
+def initialize_parameters(tools):
     '''
     Paths to save data, logs, etc.
     '''
@@ -111,7 +111,7 @@ def initialize_parameters():
     
     
     tm = Sequential()
-    tm.add(GlobalAveragePooling2D(input_shape=features_shape(instantiate_base_model(model_name=model_attributes['base_model'],
+    tm.add(GlobalAveragePooling2D(input_shape=tools.features_shape(tools.instantiate_base_model(model_name=model_attributes['base_model'],
                                                                      input_dim=model_attributes['image_size']))))
     tm.add(Dense(1024, activation='linear'))
     tm.add(Dropout(0.5))

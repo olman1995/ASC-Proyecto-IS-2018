@@ -17,15 +17,7 @@ class Muestra:
         self.pruebas = []
         self.mae = MAE()
         self.mse = MSE()
-<<<<<<< HEAD
-<<<<<<< HEAD
-        # self.estimador = Estimador()
-=======
-        self.estimador = Estimador()
->>>>>>> parent of a752c27... website 0.1.11
-=======
         #self.estimador = Estimador()
->>>>>>> parent of 00f82b9... website 0.1.18
         
     ## Documentation clacular_MAE.
     #  @param self :
