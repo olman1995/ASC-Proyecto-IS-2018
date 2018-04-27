@@ -1,17 +1,15 @@
 from .Imagen import Imagen
 from .Estimador import Estimador
+'''
+@package modelo
+Documentation for a class.
+Clase Paciente.
+'''
 
-##@package modelo
-#
-#
 
-## Documentation for a class.
-#
-#  Clase Paciente.
 class Paciente:
-    
     def __init__(self):
-        ## The constructor.
+        # The constructor.
         self.edad = None
         self.sexo = None
         self.estimacion_edad = None
@@ -23,13 +21,13 @@ class Paciente:
         self.hospital = None
         self.img = Imagen()
         self.estimador = Estimador()
-
-    ## Documentation estimar_edad.
-    #  @param self : 
-    #  @return true
-    def estimar_edad(self,sexo,url_imagen):
-        self.sexo=sexo
-        self.url_imagen=url_imagen
-        self.estimacion_edad=self.estimador.estimar(sexo)[0][0]
+    '''
+    Documentation estimar_edad.
+    @param self :
+    @return true
+    '''
+    def estimar_edad(self, sexo, url_imagen):
+        self.sexo = sexo
+        self.url_imagen = url_imagen
+        self.estimacion_edad = self.estimador.estimar(sexo)[0][0]
         return self.estimacion_edad
-    

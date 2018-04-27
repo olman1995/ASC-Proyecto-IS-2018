@@ -2,37 +2,34 @@ from .Facade import Facade
 from .FacadeAdministrador import FacadeAdministrador
 from .FacedeMedico import FacadeMedico
 from .DaoBDUsuario import DaoBDUsuario
+'''
+@package Control
+Documentation for a class.
+Clase UIUsuario.
+'''
 
-##@package Control
-#
-#
 
-## Documentation for a class.
-#
-#  Clase UIUsuario.
 class UIUsuario:
-    
     def __init__(self):
-        ## The constructor.
+        # The constructor.
         self.nombre = None
         self.contrasena = None
-        self.tipo= None
-        self.dao_bd_usuario= DaoBDUsuario()
+        self.tipo = None
+        self.dao_bd_usuario = DaoBDUsuario()
         self.facade = None
-    
-    ## Documentation Cargar imagen.
-    #  @param self :
-    #  @param nombre :  string
-    #  @param contrasena :  string
-    #  @return true
-    def ingresar(self,nombre,contrasena):
-        self.nombre,self.contrasena,self.tipo=self.dao_bd_usuario.ingresar(nombre,contrasena)
-        
-        if self.tipo==0:
-            self.facade=FacadeMedico()
-        elif self.tipo==1:
-            self.facade=FacadeMedico()
+    '''
+    Documentation Cargar imagen.
+    @param self :
+    @param nombre :  string
+    @param contrasena :  string
+    @return true
+    '''
+    def ingresar(self, nombre, contrasena):
+        self.nombre, self.contrasena, self.tipo = self.dao_bd_usuario.ingresar(nombre, contrasena)
+        if self.tipo == 0:
+            self.facade = FacadeMedico()
+        elif self.tipo == 1:
+            self.facade = FacadeMedico()
         else:
-            self.facade=FacadeMedico()
+            self.facade = FacadeMedico()
         return 0
-       

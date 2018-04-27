@@ -1,16 +1,12 @@
 from .Imagen import Imagen
+'''
+@package modelo
+Documentation for a class.
+Clase Prueba.
+'''
 
-##@package modelo
-#
-#
 
-## Documentation for a class.
-#
-#  Clase Prueba.
 class Prueba:
-    
     def __init__(self):
-        ## The constructor.
+        # The constructor.
         self.imagenes = []
-        
-    
