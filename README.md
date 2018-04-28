@@ -10,6 +10,8 @@ Se elaborara un proyecto de software en el cual se implementara un sitio web en 
 Miembro:
 
   * Olman Castillo Picado
+  * María Fernanda Alvarado Vargas
+  * Yonattan Serrano Torres
   
 ---
 
