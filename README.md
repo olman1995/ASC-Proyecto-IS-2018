@@ -14,7 +14,7 @@ Miembro:
   * Yonattan Serrano Torres
   
 ---
-## Configuracion
+## Configuracion del proyecto
  
 Para el desarrollo del proyecto se requiere.
 
