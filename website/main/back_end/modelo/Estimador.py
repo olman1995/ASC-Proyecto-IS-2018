@@ -11,7 +11,7 @@ class Estimador:
         # The constructor
         self.predecir = None
 
-    def estimar(self, sexo="F"):
+    def estimar(self, sexo):
         self.predecir = Predict()
         self.predecir.star()
         resultado = self.predecir.predict(sexo)

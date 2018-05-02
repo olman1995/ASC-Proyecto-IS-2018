@@ -4,7 +4,7 @@ from .back_end.control.DaoBDUsuario import  DaoBDUsuario
 from .back_end.control.DaoBDPaciente import DaoBDPaciente
 from .back_end.control.DTOPaciente import DTOPaciente
 from .back_end.control.Control import Control
-from .back_end.control.DaoDBMuestra import DaoDBMuestra
+from .back_end.modelo.Estimador import Estimador
 from main.views import cargar_imagen
 #click izquierdo en el proyecto
 #>django
@@ -30,7 +30,9 @@ class DjangoTest(TestCase):
         imagen.cargar_imagen("/website/main/media/upload") 
     
     def test_4(self):
-        print("Test4: Cargar Muestras") 
-        muestra = DaoDBMuestra()  
+        print("Test4: estimar")
+        estimador = Estimador()
+        valor=estimador.estimar("F")
+        print(valor[0][0])
         
         

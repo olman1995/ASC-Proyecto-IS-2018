@@ -8,6 +8,7 @@ from django.core.files.base import ContentFile
 from django.db import models
 
 import os
+import shutil
 
 from main.models import usuario
 from main.back_end.control.UIUsuario import UIUsuario
@@ -32,22 +33,29 @@ def cargar_imagen(request):
     if request.method == 'POST':
         
         template = loader.get_template('cargar_paciente.html')
-        subir_imagen(request.FILES['img'])
-        usuario.facade.estimar_edad(request.POST["sexo"],str(request.FILES['img']))
+        img_name=subir_imagen(request.FILES['img'])
+        usuario.facade.estimar_edad(request.POST["sexo"],img_name)
         edad,estimacion=usuario.facade.desplegar_edad()
-        context={"estimacion":estimacion}
+        context={"estimacion":estimacion,"img":img_name}
         return HttpResponse(template.render(context,request))
     context={}
     return HttpResponse(template.render(context,request))
 
 
 def subir_imagen(file):
-    directory=os.path.split(os.path.abspath(__file__))[0]+'/media/upload/'
+    directory_1=os.path.split(os.path.abspath(__file__))[0]+'/media/upload/'
+    directory_2=os.path.split(os.path.abspath(__file__))[0]+'/back_end/modelo/BoneAge_XRay_CNN/dataset/test/'
+    shutil.rmtree(directory_2)
     if not os.path.exists('upload/'):
         os.mkdir('upload/')
-    fs = FileSystemStorage(location=directory)
-    filename = fs.save(str(file), file)
-    uploaded_file_url = fs.url(filename)
+    fs_1 = FileSystemStorage(location=directory_1)
+    fs_2 = FileSystemStorage(location=directory_2)
+    filename_2 = fs_1.save(str(file), file)
+    filename_1 = fs_2.save(str(file), file)
+    return filename_2 
+    #uploaded_file_url = fs_1.url(filename_1)
+    #uploaded_file_url = fs_2.url(filename_2)
+
 
     return True
 
