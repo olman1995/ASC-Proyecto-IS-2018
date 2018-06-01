@@ -45,5 +45,6 @@ class GestorPaciente:
     @return true
     '''
     def guardar_informacion_paciente(self, datos):
+        datos.estimacion_edad=self.paciente.estimacion_edad;
         self.dao_db_pacinete.guardar_informacion_paciente(datos)
         return True

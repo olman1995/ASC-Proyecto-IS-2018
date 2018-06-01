@@ -27,9 +27,10 @@ class UIUsuario:
     def ingresar(self, nombre, contrasena):
         self.nombre, self.contrasena, self.tipo = self.dao_bd_usuario.ingresar(nombre, contrasena)
         if self.tipo == 0:
-            self.facade = FacadeMedico()
+            self.facade = FacadeAdministrador()
         elif self.tipo == 1:
             self.facade = FacadeMedico()
         else:
             self.facade = FacadeMedico()
-        return 0
+            
+        return self.tipo
