@@ -10,7 +10,7 @@ Clase GestorMuestra.
 class GestorMuestra:
     def __init__(self):
         # The constructor.
-        self.dao_db_muestra = DaoDBMuestra()
+        #self.dao_db_muestra = DaoDBMuestra()
         self.muestra = Muestra()
     '''
     Documentation Cargar imagenes.
@@ -18,31 +18,7 @@ class GestorMuestra:
     @param direccion : string
     @return true
     '''
-    def cargar_imagenes(self, direccion):
-        self.dao_db_muestra.cargar_imagenes(direccion)
-        return True
-    '''
-    Documentation Cargar_cvs.
-    @param self :
-    @param nombre : string
-    @return true
-    '''
-    def cargar_cvs(self, nombre):
-        self.dao_db_muestra.cargar_cvs(nombre)
-        return True
-    '''
-    Documentation calcular_MAE.
-    @param self :
-    @return true
-    '''
-    def calcular_MAE(self):
-        self.muestra.calcular_MAE()
-        return True
-    '''
-    Documentation calcular_MSE.
-    @param self :
-    @return true
-    '''
-    def calcular_MSE(self):
-        self.muestra.calcular_MSE()
-        return True
+    def cargar_muestra(self ,muestra,k,cant_img):
+        resultado = self.muestra.cargar_muestra(muestra, k, cant_img)
+        return resultado 
+    

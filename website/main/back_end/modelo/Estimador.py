@@ -16,3 +16,10 @@ class Estimador:
         self.predecir.star()
         resultado = self.predecir.predict(sexo)
         return resultado
+
+    def estimar_muestra(self,sub_muestra,sexo):
+        self.predecir = Predict()
+        self.predecir.star()
+        resultado = self.predecir.predict_1(sub_muestra,sexo)
+        return resultado
+        

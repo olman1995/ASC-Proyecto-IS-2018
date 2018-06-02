@@ -83,3 +83,25 @@ class Predict:
             result_male = self.make_predictions(self.model_attributes, self.paths, self.tm, ['predict'])
             K.clear_session()
             return result_male
+        
+    def predict_1(self, data,sex):
+        result=[]
+       
+        for i in range(len(data)) : 
+            
+            self.paths[2] = [self.paths[0]+'../../../../media/test/'+str(data[i])+'.png']
+            read_images(self.model_attributes['image_size'], self.model_attributes['train_test_split'],
+                        self.paths[1], self.paths[2], self.paths[3], self.paths[4])
+            
+            if "F" == sex[i]:
+                self.model_attributes['gender'] = 'F'
+                self.paths[6] = self.paths[0] + '/weights/best_female_model.h5'
+                result.append( self.make_predictions(self.model_attributes, self.paths, self.tm, ['predict'])[0][0])
+            else:
+                self.model_attributes['gender'] = 'M'
+                self.paths[6] = self.paths[0] + '/weights/best_male_model.h5'
+                result.append( self.make_predictions(self.model_attributes, self.paths, self.tm, ['predict'])[0][0])
+            
+        K.clear_session()
+            
+        return result

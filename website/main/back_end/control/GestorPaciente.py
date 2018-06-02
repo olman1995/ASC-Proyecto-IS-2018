@@ -1,6 +1,6 @@
 from ..modelo.Paciente import Paciente
 from .DaoBDPaciente import DaoBDPaciente
-from ..modelo.Imagen import Imagen
+
 '''
 @package Control
 Documentation for a class.
@@ -20,7 +20,7 @@ class GestorPaciente:
     @return true
     '''
     def cargar_imagen(self, nombre):
-        self.paciente.img = Imagen()
+ #       self.paciente.img = Imagen()
         self.paciente.img.leer_imagen(nombre)
         return True
     '''

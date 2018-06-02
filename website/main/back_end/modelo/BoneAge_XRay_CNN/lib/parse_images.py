@@ -24,7 +24,7 @@ def read_images(image_size, train_test_split, gt_columns, image_paths, gt_paths,
                     im = im.convert('L')
                     # Resize all images to standard sizing
                     im = im.resize(image_size)
-                    raw[int(name)] = np.array(list(im.getdata()))
+                    raw[1400] = np.array(list(im.getdata()))
                     im.close()
                 except IOError:
                     print('Error loading image ', filename)

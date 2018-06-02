@@ -49,31 +49,7 @@ class Facade:
     @param direccion : string
     @return true
     '''
-    def cargar_imagenes(self, direccion):
-        self.control.cargar_imagenes(direccion)
-        return True
-    '''
-    Documentation Cargar_cvs.
-    @param self :
-    @param nombre : string
-    @return true
-    '''
-    def cargar_cvs(self, nombre):
-        self.control.cargar_cvs(nombre)
-        return True
-    '''
-    Documentation clacular_MAE.
-    @param self :
-    @return true
-    '''
-    def calcular_MAE(self):
-        self.control.calcular_MAE()
-        return True
-    '''
-    Documentation Calcuar_MSE .
-    @param self :
-    @return true
-    '''
-    def calcular_MSE(self):
-        self.control.calcular_MSE()
-        return True
+    def cargar_muestra(self ,muestra,k,cant_img):
+        resultado = self.control.cargar_muestra(muestra, k, cant_img)
+        return resultado 
+    

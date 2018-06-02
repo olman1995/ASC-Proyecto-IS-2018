@@ -48,10 +48,18 @@ def subir_csv(file):
     filename_2 = fs_1.save(str(file), file)
     return filename_2     
     
+
+def resultado(request):
+    template = loader.get_template('resultado.html')
+    context={}
+    return HttpResponse(template.render(context,request))
+
+
 def cargar_muestra(request):
     template = loader.get_template('cargar_muestra.html')
+    context={}
     if request.method == 'POST':
-        
+        template = loader.get_template('resultado.html')
         subir_muestra(request)
         subir_csv(request.FILES['csv'])
         
@@ -59,27 +67,31 @@ def cargar_muestra(request):
         nombres_archivos = os.listdir(directory)
         
         directory_1=os.path.split(os.path.abspath(__file__))[0]+'/media/csv/'+str(request.FILES['csv'])
+        #
         leer=pd.read_csv(directory_1,sep=',');
         #print(leer.values())
-        
+        muestra={"id":[],"age":[],"sex":[]}
         for i in range(len(leer.get("id"))):
             #print(leer.get("id")[i])
             for nombre_archivo in nombres_archivos:
                 #print(nombre_archivo.split()[0])
                 if str(leer.get("id")[i]) == nombre_archivo.split(".")[0]:
-                    print(leer.get("id")[i])
-                
-    context={}
-    return HttpResponse(template.render(context,request))
-
-def calcular_mae(request):
-    template = loader.get_template('calcular_mae.html')
-    context={}
-    return HttpResponse(template.render(context,request))
-
-def calcular_mse(request):
-    template = loader.get_template('calcular_mse.html')
-    context={}
+                    muestra.get("id").append(leer.get("id")[i])
+                    muestra.get("age").append(leer.get("boneage")[i])
+                    if(leer.get("male")[i]==True):
+                        muestra.get("sex").append("M")
+                    else:
+                        muestra.get("sex").append("F")
+        k=int(request.POST["k"])
+        cant_img=int(request.POST["cant_img"])
+        
+        resultado = usuario.facade.cargar_muestra(muestra,k,cant_img)
+        resultado["k"] = k
+        resultado["cant_img"] = cant_img
+        context=resultado
+        
+        
+    #context={}
     return HttpResponse(template.render(context,request))
 
 def cargar_imagen(request):

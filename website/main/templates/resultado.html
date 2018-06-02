@@ -43,9 +43,6 @@
 				<nav role="navigation">
 					<ul>
 						<li><a href="cargar_imagen.html">Carga de pruebas</a></li>
-						<li><a href="calcular_mae.html">Calclular MAE</a></li>
-						<li><a href="clacular_mse.html">Calclular MSE</a></li>
-						<li><a href="principal.html">Inicio</a></li>
 						<li class="cta"><a href="index">Salir</a></li>
 					</ul>
 				</nav>
@@ -57,24 +54,16 @@
 		
 	</div>
 	
-<h2>Caragar Muestra</h2>        
-<div class="file-upload">
-    <form action="/inicio/cargar_imagen" method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-	 
-	 Carpeta
-    <input class="file-upload-input" type='file' name="img" accept="image/*" />
-    Archivo .cvs
-    <input class="file-upload-input" type='file' name="img" accept="image/*" />
-	<input type="text" >
+       
+<div class="" style="width: 600px;">
+
+	{% for i in range {k} %}
 	
-	<br>
-   <input type="submit" class="file-upload-btn" value="Cargar muestra">
-   </form>
-   
+	
+	{% endfor %}
+   {{res}}
 </div>
-</div> 
-  
+
 
     
 	

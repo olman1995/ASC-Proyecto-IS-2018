@@ -1,4 +1,4 @@
-from .Imagen import Imagen
+
 from .Estimador import Estimador
 '''
 @package modelo
@@ -19,7 +19,6 @@ class Paciente:
         self.apellido_2 = None
         self.cedula = None
         self.hospital = None
-        self.img = Imagen()
         self.estimador = Estimador()
     '''
     Documentation estimar_edad.
