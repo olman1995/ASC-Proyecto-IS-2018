@@ -28,3 +28,6 @@ class DaoBDPaciente:
                              hospital=datos.hospital)
         self.dato.save()
         return True
+    def cargar_informacion(self):
+       
+        return paciente.objects.all()

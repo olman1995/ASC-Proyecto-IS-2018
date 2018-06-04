@@ -19,6 +19,9 @@ class GestorPaciente:
     @param nombre : string
     @return true
     '''
+    def cargar_informacion (self):
+        return self.dao_db_pacinete.cargar_informacion()
+        
     def cargar_imagen(self, nombre):
  #       self.paciente.img = Imagen()
         self.paciente.img.leer_imagen(nombre)

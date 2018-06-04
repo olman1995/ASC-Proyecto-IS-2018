@@ -10,6 +10,7 @@ urlpatterns = [
     url(r'^principal',views.principal, name='principal'),
     url(r'^cargar_muestra',views.cargar_muestra, name='cargar_muestra'),
     url(r'^resultado',views.resultado, name='resultado'),
+    url(r'^ver_pacientes',views.ver_pacientes, name='ver_pacientes'),
     url(r'^',views.index, name='index'),
     
 ]

@@ -16,6 +16,9 @@ class FacadeMedico(Facade):
     @param nombre : string
     @return true
     '''
+    def cargar_informacion (self):
+        return Facade.cargar_informacion(self)
+    
     def cargar_imagen(self, nombre):
         Facade.cargar_imagen(self, nombre)
         return True

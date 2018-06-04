@@ -16,6 +16,9 @@ class Facade:
     @param nombre : string
     @return true
     '''
+    def cargar_informacion (self):
+        return self.control.cargar_informacion()
+    
     def cargar_imagen(self, nombre):
         self.control.cargar_imagen()
         return True

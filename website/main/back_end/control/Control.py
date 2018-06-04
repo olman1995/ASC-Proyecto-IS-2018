@@ -18,6 +18,9 @@ class Control:
     @param nombre : string
     @return true
     '''
+    def cargar_informacion (self):
+        return self.gestor_paciente.cargar_informacion()
+    
     def cargar_imagen(self, nombre):
         self.gestor_paciente.cargar_imagen(nombre)
         return True

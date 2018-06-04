@@ -1,5 +1,6 @@
 from .Estimador import Estimador
 import random
+import numpy as np
 '''
 @package modelo
 Documentation for a class.
@@ -20,14 +21,21 @@ class Muestra:
     @param self :
     @return true
     '''
-    def calcular_MAE(self):
-        return True
+    def calcular_MAE(self,y1,y2):
+        y_1=np.array(y1)
+        y_2=np.array(y2)
+        mae = (1/len(y1))*sum(np.abs(y_1-y_2))
+        return mae
     '''
     Documentation Calcuar_MSE .
     @param self :
     @return true
     '''
-    def calcular_MSE(self):
+    def calcular_MSE(self,y1,y2):
+        y_1=np.array(y1)
+        y_2=np.array(y2)
+        mae = (1/len(y1))*sum((y_1-y_2)**2)
+        return mae
         return True
     '''
     Documentation Calcuar_MSE .
@@ -55,11 +63,16 @@ class Muestra:
                         cambio=False
         
         self.muestra=muestra
-        resultado={"sub":self.sub_muestra,"mae":[],"mse":[],"res":[],"mean":[],"avg":[]}
+        resultado={"sub":self.sub_muestra,"mae":[],"mse":[],"res":[],"mean":[],"std":[],"var":[]}
         
         
         for i in self.sub_muestra:
             estimacion=self.estimador.estimar_muestra(i[0],i[2])
             resultado.get("res").append(estimacion)
+            resultado.get("mae").append(self.calcular_MAE(estimacion,i[1]))
+            resultado.get("mse").append(self.calcular_MSE(estimacion,i[1]))
+            resultado.get("mean").append(np.mean(estimacion))
+            resultado.get("std").append(np.std(estimacion))
+            resultado.get("var").append(np.var(estimacion))
         
         return resultado

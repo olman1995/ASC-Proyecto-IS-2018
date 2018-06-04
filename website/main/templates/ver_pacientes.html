@@ -42,7 +42,9 @@
 				<h1><a href="principal.html">AES</a></h1>
 				<nav role="navigation">
 					<ul>
-						<li><a href="cargar_muestra.html">Carga de pruebas</a></li>
+						<li><a href="cargar_imagen.html">Cargar imagen</a></li>
+						<li><a href="cargar_paciente.html">Agregar paciente</a></li>
+						<li><a href="ver_pacientes.html">ver pacientes</a></li>
 						<li class="cta"><a href="index">Salir</a></li>
 					</ul>
 				</nav>
@@ -58,44 +60,32 @@
 <div class="file-upload" style="width: 600px;">
 	<div class="panel-group" id="accordion">
 	{% for i in res %}
-		{{for}}
+		
 		<div class="panel panel-default">
 		    <div class="panel-heading">
 		      <h4 class="panel-title">
 		        <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{ forloop.counter0 }}">
-		        Prueba {{ forloop.counter0 }}</a>
+		        {{i.cedula}}</a>
 		      </h4>
 		    </div>
 		    <div id="collapse{{ forloop.counter0 }}" class="panel-collapse collapse in">
 		      <div class="panel-body">
-		      		<table class="table">
-				    <thead>
-				      <tr>
-				        <th>ID Imagen</th>
-				        <th>Edad Real</th>
-				        <th>Sexo</th>
-				        <th>Edad Estimada</th>
-				        
-				      </tr>
-				    </thead>
-				    <tbody>
-				    {% for j in i.sub %}
-				       
-				       <tr>
-				      	
-				        <td>{{j.id}}</td>
-				        <td>{{j.edad}}</td>
-				        <td>{{j.sexo}}</td>
-				        <td>{{j.estimacion}}</td>
-				       </tr>
-					  {% endfor %}
-				  </table>
-				  <br>
-				  	MAE: {{i.mae}}<br>
-				  	MSE: {{i.mse}}<br>
-					Media: {{i.mean}}<br>
-					Varianza: {{i.var}}<br>
-					Desviacion estandar: {{i.std}}<br>				
+		      		Nombre: 
+		      		{{i.nombre}}
+		      		{{i.apellido_1}}
+		      		{{i.apellido_1}}
+		      		<br>
+		      		Cedula: 
+		      		{{i.cedula}}
+		      		<br>
+		      		Edad: 
+		      		{{i.edad}}
+		      		<br>
+		      		Estimacion: 
+		      		{{i.estimacion_edad}}	
+		      		<br>
+		      		<img src="{% static i.url_imagen %}">
+		      					
 		      </div>
 		    </div>
 		  </div>

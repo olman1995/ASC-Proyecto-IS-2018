@@ -82,13 +82,30 @@ def cargar_muestra(request):
                         muestra.get("sex").append("M")
                     else:
                         muestra.get("sex").append("F")
+        
+        
         k=int(request.POST["k"])
         cant_img=int(request.POST["cant_img"])
-        
         resultado = usuario.facade.cargar_muestra(muestra,k,cant_img)
-        resultado["k"] = k
-        resultado["cant_img"] = cant_img
-        context=resultado
+        res = []
+        for i in range(k):
+            res.append({"sub":[],
+                        "mae":resultado.get('mae')[i],
+                        "mse":resultado.get('mse')[i],
+                        "res":resultado.get('res')[i],
+                        "mean":resultado.get('mean')[i],
+                        "std":resultado.get('std')[i],
+                        "var":resultado.get('var')[i]})
+            for k in range(cant_img):
+                
+                info={"id":resultado.get('sub')[i][0][k],
+                      "edad":resultado.get('sub')[i][1][k], 
+                      "sexo":resultado.get('sub')[i][2][k] ,
+                      "estimacion":resultado.get('res')[i][k]}
+                
+                res[i].get("sub").append(info)
+        
+        context={"res":res}
         
         
     #context={}
@@ -110,7 +127,7 @@ def cargar_imagen(request):
 
 
 def subir_imagen(file):
-    directory_1=os.path.split(os.path.abspath(__file__))[0]+'/media/upload/'
+    directory_1=os.path.split(os.path.abspath(__file__))[0]+'/static/media/upload/'
     directory_2=os.path.split(os.path.abspath(__file__))[0]+'/back_end/modelo/BoneAge_XRay_CNN/dataset/test/'
     shutil.rmtree(directory_2)
     if not os.path.exists('upload/'):
@@ -133,7 +150,7 @@ def cargar_paciente(request):
         template = loader.get_template('cargar_paciente.html')
         edad=int(request.POST["edad"])
         estimacion_edad=0
-        url_imagen=" "
+        url_imagen="media/upload/"+request.POST["url"]
         nombre=request.POST["nombre"]
         apellido_1=request.POST["apellido1"]
         apellido_2=request.POST["apellido2"]
@@ -142,6 +159,12 @@ def cargar_paciente(request):
         datos= DTOPaciente(edad,estimacion_edad,url_imagen,nombre,apellido_1,apellido_2,cedula,hospital)
         usuario.facade.guardar_informacion_paciente(datos)
         return HttpResponse(template.render(context,request))
+    return HttpResponse(template.render(context,request))
+
+def ver_pacientes(request):
+    template = loader.get_template('ver_pacientes.html')
+    res=usuario.facade.cargar_informacion()
+    context={"res":res}    
     return HttpResponse(template.render(context,request))
 
 def principal(request):
@@ -160,15 +183,15 @@ def login(request):
         tipo = usuario.ingresar(nombre,contrasena)
         
         if tipo==0:
-            print("test 1")
-            template = loader.get_template('principal.html')
+            
+            template = loader.get_template('cargar_muestra.html')
             modo_1 = "display:none"
             modo_2 = ""
             context={"modo_1":modo_1,"modo_2":modo_2}
             return HttpResponse(template.render(context,request))
         elif tipo==1:
-            print("test 2")
-            template = loader.get_template('principal.html')
+            
+            template = loader.get_template('cargar_imagen.html')
             modo_1 = ""
             modo_2 = "display:none"
             context={"modo_1":modo_1,"modo_2":modo_2}
