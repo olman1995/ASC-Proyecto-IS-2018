@@ -105,3 +105,4 @@ class Predict:
         K.clear_session()
             
         return result
+    

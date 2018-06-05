@@ -1,5 +1,6 @@
 from .GestorMuestra import GestorMuestra
 from .GestorPaciente import GestorPaciente
+
 '''
 @package Control
 Documentation for a class.
@@ -22,7 +23,6 @@ class Control:
         return self.gestor_paciente.cargar_informacion()
     
     def cargar_imagen(self, nombre):
-        self.gestor_paciente.cargar_imagen(nombre)
         return True
     '''
     Documentation estimar_edad.

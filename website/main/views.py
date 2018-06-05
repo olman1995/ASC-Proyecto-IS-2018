@@ -67,14 +67,10 @@ def cargar_muestra(request):
         nombres_archivos = os.listdir(directory)
         
         directory_1=os.path.split(os.path.abspath(__file__))[0]+'/media/csv/'+str(request.FILES['csv'])
-        #
         leer=pd.read_csv(directory_1,sep=',');
-        #print(leer.values())
         muestra={"id":[],"age":[],"sex":[]}
         for i in range(len(leer.get("id"))):
-            #print(leer.get("id")[i])
             for nombre_archivo in nombres_archivos:
-                #print(nombre_archivo.split()[0])
                 if str(leer.get("id")[i]) == nombre_archivo.split(".")[0]:
                     muestra.get("id").append(leer.get("id")[i])
                     muestra.get("age").append(leer.get("boneage")[i])

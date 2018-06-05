@@ -6,6 +6,7 @@ from .DaoBDPaciente import DaoBDPaciente
 Documentation for a class.
 Clase GestorPaciente.
 '''
+from numba.types import none
 
 
 class GestorPaciente:
@@ -48,6 +49,9 @@ class GestorPaciente:
     @return true
     '''
     def guardar_informacion_paciente(self, datos):
-        datos.estimacion_edad=self.paciente.estimacion_edad;
+        if(self.paciente.estimacion_edad == None):
+            datos.estimacion_edad=10
+        else:
+            datos.estimacion_edad=self.paciente.estimacion_edad
         self.dao_db_pacinete.guardar_informacion_paciente(datos)
         return True
