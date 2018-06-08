@@ -1,5 +1,7 @@
 '''
 @package Control
+@version: 0.1.20
+@author: Olman Castilla, Fernanda Alvarado y Yonnattan Serrano
 Documentation for a class.
 Clase DTOPaciente.
 '''

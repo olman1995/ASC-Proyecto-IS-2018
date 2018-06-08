@@ -4,6 +4,8 @@ from .FacedeMedico import FacadeMedico
 from .DaoBDUsuario import DaoBDUsuario
 '''
 @package Control
+@version: 0.1.20
+@author: Olman Castilla, Fernanda Alvarado y Yonnattan Serrano
 Documentation for a class.
 Clase UIUsuario.
 '''
@@ -25,6 +27,7 @@ class UIUsuario:
     @return true
     '''
     def ingresar(self, nombre, contrasena):
+        
         self.nombre, self.contrasena, self.tipo = self.dao_bd_usuario.ingresar(nombre, contrasena)
         if self.tipo == 0:
             self.facade = FacadeAdministrador()

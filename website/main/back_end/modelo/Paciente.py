@@ -4,6 +4,8 @@ import os
 import shutil
 '''
 @package modelo
+@version: 0.1.20
+@author: Olman Castilla, Fernanda Alvarado y Yonnattan Serrano
 Documentation for a class.
 Clase Paciente.
 '''
@@ -23,9 +25,10 @@ class Paciente:
         self.hospital = None
         self.estimador = Estimador()
     '''
-    Documentation estimar_edad.
-    @param self :
-    @return true
+    Documentation estimar.
+    @param self
+    sexo= [(F,M)]  solo acepta los valores de F y M
+    @return float positvo
     '''
     def estimar_edad(self, sexo, url_imagen):
         self.sexo = sexo
@@ -33,11 +36,3 @@ class Paciente:
         self.estimacion_edad = self.estimador.estimar(sexo)[0][0]
         return self.estimacion_edad
     
-    def cargar_imagen(self, nombre):
-        directory=os.path.split(os.path.abspath(__file__))[0]+"\\BoneAge_XRay_CNN\\dataset\\test"
-        #shutil.rmtree(directory)
-        src=nombre
-        dst=directory
-        #shutil.copyfile(src, dst)
-        #copyfile(src, dst)
-        return True

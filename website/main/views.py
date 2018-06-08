@@ -8,7 +8,7 @@ from django.core.files.base import ContentFile
 from django.db import models
 from numpy import genfromtxt
 import pandas as pd
-
+import numpy as np
 import os
 import shutil
 
@@ -67,6 +67,7 @@ def cargar_muestra(request):
         nombres_archivos = os.listdir(directory)
         
         directory_1=os.path.split(os.path.abspath(__file__))[0]+'/media/csv/'+str(request.FILES['csv'])
+        
         leer=pd.read_csv(directory_1,sep=',');
         muestra={"id":[],"age":[],"sex":[]}
         for i in range(len(leer.get("id"))):
@@ -84,6 +85,12 @@ def cargar_muestra(request):
         cant_img=int(request.POST["cant_img"])
         resultado = usuario.facade.cargar_muestra(muestra,k,cant_img)
         res = []
+        
+        mean_mae=np.mean(resultado.get('mae'))
+        mean_mse=np.mean(resultado.get('mse'))
+        std_mae=np.std(resultado.get('mae'))
+        std_mse=np.std(resultado.get('mse'))
+        
         for i in range(k):
             res.append({"sub":[],
                         "mae":resultado.get('mae')[i],
@@ -101,7 +108,7 @@ def cargar_muestra(request):
                 
                 res[i].get("sub").append(info)
         
-        context={"res":res}
+        context={"res":res,"mean_mae":mean_mae,"std_mae":std_mae,"mean_mse":mean_mse,"std_mse":std_mse}
         
         
     #context={}

@@ -3,6 +3,8 @@ from .DaoBDPaciente import DaoBDPaciente
 
 '''
 @package Control
+@version: 0.1.20
+@author: Olman Castilla, Fernanda Alvarado y Yonnattan Serrano
 Documentation for a class.
 Clase GestorPaciente.
 '''
@@ -28,9 +30,10 @@ class GestorPaciente:
         self.paciente.img.leer_imagen(nombre)
         return True
     '''
-    Documentation estimar_edad.
-    @param self :
-    @return true
+    Documentation estimar.
+    @param self
+    @param sexo= F,M  solo acepta los valores de F y M
+    @return float positvo
     '''
     def estimar_edad(self, sexo, url_imagen):
         resultado = self.paciente.estimar_edad(sexo, url_imagen)

@@ -3,6 +3,8 @@ import random
 import numpy as np
 '''
 @package modelo
+@version: 0.1.20
+@author: Olman Castilla, Fernanda Alvarado y Yonnattan Serrano
 Documentation for a class.
 Clase Muestra.
 '''
@@ -14,33 +16,45 @@ class Muestra:
         self.muestra = []
         self.estimador = Estimador()
         self.sub_muestra =[]
-        
-        # self.estimador = Estimador()
     '''
-    Documentation clacular_MAE.
-    @param self :
-    @return true
+    Documentation clacular_MAE. 
+    https://www.gepsoft.com/gxpt4kb/Chapter09/Section1/SS02/SSS5.htm
+    @param self :  
+    @param y1=[1.0,2.0,3.0] Valores esperados: float
+    @param y2=[1.0,2.0,3.0] Valores esperados: float
+    @return float
     '''
     def calcular_MAE(self,y1,y2):
         y_1=np.array(y1)
         y_2=np.array(y2)
-        mae = (1/len(y1))*sum(np.abs(y_1-y_2))
+        try:
+            mae = (1/len(y1))*sum(np.abs(y_1-y_2))
+        except:
+            return -1
         return mae
     '''
     Documentation Calcuar_MSE .
-    @param self :
-    @return true
+    https://www.gepsoft.com/gxpt4kb/Chapter09/Section1/SS02/SSS3.htm
+    @param self : 
+    @param y1=[1.0,2.0,3.0] Valores esperados: float
+    @param y2=[1.0,2.0,3.0] Valores esperados: float
+    @return float
     '''
     def calcular_MSE(self,y1,y2):
         y_1=np.array(y1)
         y_2=np.array(y2)
-        mae = (1/len(y1))*sum((y_1-y_2)**2)
-        return mae
-        return True
+        try:
+            mse = (1/len(y1))*sum((y_1-y_2)**2)
+        except:
+            return -1
+        return mse
     '''
-    Documentation Calcuar_MSE .
-    @param self :
-    @return true
+    Documentation Cargar_Muestra.
+    @param self
+    @param muestra= dicionario de estructura {"id":[id_image],"edad":[edad],"sexo":[("f","M")]} ,cualquier otro valor
+    @param k= entero positivo, cualquier otro valor
+    @param cant_img= entero positivo, cualquier otro valor  
+    @return resultado={"sub":self.sub_muestra,"mae":[],"mse":[],"res":[],"mean":[],"std":[],"var":[]}
     '''
     def cargar_muestra(self,muestra,k,cant_img):
         self.sub_muestra=[]
@@ -53,6 +67,7 @@ class Muestra:
                 cambio=True
                 while(cambio):
                     valor=random.choice(muestra.get("id"))
+                
                     if valor in self.sub_muestra[i][0]:
                         cambio=True
                     else:
@@ -67,12 +82,15 @@ class Muestra:
         
         
         for i in self.sub_muestra:
-            estimacion=self.estimador.estimar_muestra(i[0],i[2])
-            resultado.get("res").append(estimacion)
-            resultado.get("mae").append(self.calcular_MAE(estimacion,i[1]))
-            resultado.get("mse").append(self.calcular_MSE(estimacion,i[1]))
-            resultado.get("mean").append(np.mean(estimacion))
-            resultado.get("std").append(np.std(estimacion))
-            resultado.get("var").append(np.var(estimacion))
+            try:
+                estimacion=self.estimador.estimar_muestra(i[0],i[2])
+                resultado.get("res").append(estimacion)
+                resultado.get("mae").append(self.calcular_MAE(estimacion,i[1]))
+                resultado.get("mse").append(self.calcular_MSE(estimacion,i[1]))
+                resultado.get("mean").append(np.mean(estimacion))
+                resultado.get("std").append(np.std(estimacion))
+                resultado.get("var").append(np.var(estimacion))
+            except:
+                return -1
         
         return resultado

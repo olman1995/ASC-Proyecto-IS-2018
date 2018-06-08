@@ -1,6 +1,8 @@
 from ...models import usuario
 '''
 @package Control
+@version: 0.1.20
+@author: Olman Castilla, Fernanda Alvarado y Yonnattan Serrano
 Documentation for a class.
 Clase DaoBDUsuario.
 '''
@@ -18,7 +20,10 @@ class DaoBDUsuario:
     @return nombre : string,contrasena : string,tipo : int
     '''
     def ingresar(self, nombre, contrasena):
-        for i in usuario.objects.all():
-            if i.nombre == nombre and i.contrasena == contrasena:
-                return i.nombre, i.contrasena, i.tipo
+        try:
+            for i in usuario.objects.all():
+                if i.nombre == nombre and i.contrasena == contrasena:
+                    return i.nombre, i.contrasena, i.tipo
+        except:
+            return "", "", -1
         return "", "", -1

@@ -29,28 +29,31 @@ class DjangoTest(TestCase):
         usuario.ingresar("abc", "12345")
         f= usuario.facade
         dto_paciente = DTOPaciente(10,10," ","olman","castillo","picado","2324","nose")
-        ret = f.guardar_informacion_paciente(dto_paciente)         
+        ret = f.guardar_informacion_paciente(dto_paciente) 
+        self.assertEqual(ret,True, "Error al agregar paciente")        
         
     def test_2(self):
         print("Test2: Ver paciente")
         usuario = UIUsuario()
         usuario.ingresar("abc", "12345")
         f= usuario.facade
+        dto_paciente = DTOPaciente(10,10," ","olman","castillo","picado","2324","nose")
+        f.guardar_informacion_paciente(dto_paciente) 
         ret= f.cargar_informacion()
-        
+        print(ret.exists())
+        self.assertEqual(ret.exists(),True, "Error al ver paciente")
     
     def test_3(self):
         print("Test2: Estimar")
         directory=os.path.split(os.path.abspath(__file__))[0]
         print(directory)
         #shutil.copyfile(src, dst)
-    
         usuario = UIUsuario()
         usuario.ingresar("abc", "12345")
         f= usuario.facade
         directory=os.path.split(os.path.abspath(__file__))[0]+"\\test.png"
         ret= f.estimar_edad("F", directory)
-        
+        self.assertEqual(ret > 0,True, "Error valor < 0")
         
     def test_4(self):
         print("Test4: prueba")
@@ -61,6 +64,7 @@ class DjangoTest(TestCase):
         cant_img=2
         muestra={"id":[1414,1406,1394,1388,1412],"age":[78,106,57,126,156],"sex":["M","F","M","F","F"]}
         ret= f.cargar_muestra(muestra,k,cant_img)
+        self.assertEqual(isinstance(ret,dict),True, "Error en la prueba")
         
         
         
